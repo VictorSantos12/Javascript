@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
+    <link href="layout.css" type="text/css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <section id="main">
+     <div id="Calc">
+      <div class="block">
+        <div class="search">
+           <form>
+               <input>
+           </form>
+        </div>
+         <div class="Values">
+             <div class="first">
+                <button
+                 id="zero"
+                 value="0"
+                 onclick="zero()"
+                 onmouseover="document.querySelector('button#zero').style.background='#222222'"
+                 onmouseout="document.querySelector('button#zero').style.background='#353535'"
+                 >
+                    0
+                </button>
+                <button
+                 id="three"
+                 value="3"
+                 onclick="three()"
+                 onmouseover="document.querySelector('button#three').style.background='#222222'"
+                 onmouseout="document.querySelector('button#three').style.background='#353535'"
+                 >
+                    3
+                </button>
+                <button
+                 id="six"
+                 value="6"
+                 onclick="six()"
+                 onmouseover="document.querySelector('button#six').style.background='#222222'"
+                 onmouseout="document.querySelector('button#six').style.background='#353535'"
+                >
+                    6
+                </button>
+             </div>
+             <div class="second">
+                <button
+                 id="one"
+                 value="1"
+                 onclick="one()"
+                 onmouseover="document.querySelector('button#one').style.background='#222222'"
+                 onmouseout="document.querySelector('button#one').style.background='#353535'"
+                >
+                    1
+                </button>
+                <button
+                 id="four"
+                 value="4"
+                 onclick="four()"
+                 onmouseover="document.querySelector('button#four').style.background='#222222'"
+                 onmouseout="document.querySelector('button#four').style.background='#353535'"
+                >
+                    4
+                </button>
+                <button
+                 id="seven"
+                 value="7"
+                 onclick="seven()"
+                 onmouseover="document.querySelector('button#seven').style.background='#222222'"
+                 onmouseout="document.querySelector('button#seven').style.background='#353535'"
+                >
+                    7
+                </button>
+                <button
+                 id="nine"
+                 value="9"
+                 onclick="nine()"
+                 onmouseover="document.querySelector('button#nine').style.background='#222222'"
+                 onmouseout="document.querySelector('button#nine').style.background='#353535'"
+                >
+                    9
+                </button>
+            </div>
+            <div class="third">
+                <button
+                 id="two"
+                 value="2"
+                 onclick="two()"
+                 onmouseover="document.querySelector('button#two').style.background='#222222'"
+                 onmouseout="document.querySelector('button#two').style.background='#353535'"
+                >
+                    2
+                </button>
+                <button
+                 id="five"
+                 value="5"
+                 onclick="five()"
+                 onmouseover="document.querySelector('button#five').style.background='#222222'"
+                 onmouseout="document.querySelector('button#five').style.background='#353535'"
+                >
+                    5
+                </button>
+                <button
+                 id="eight"
+                 value="8"
+                 onclick="eight()"
+                 onmouseover="document.querySelector('button#eight').style.background='#222222'"
+                 onmouseout="document.querySelector('button#eight').style.background='#353535'"
+                >
+                    8
+                </button>
+            </div>
+         </div>
+
+        </div>
+
+
+         <div class="Operators">
+            <button
+             id="clean"
+             
+             onmouseover="document.querySelector('button#clean').style.background='#222222'"
+             onmouseout="document.querySelector('button#clean').style.background='#353535'"
+            >
+                C
+            </button>
+            <button
+             id="plus"
+             value="+"
+             onclick="plus()"
+             onmouseover="document.querySelector('button#plus').style.background='#222222'"
+             onmouseout="document.querySelector('button#plus').style.background='#353535'"
+            >
+                +
+            </button>
+            <button
+             id="less"
+             value="-"
+             onclick="less()"
+             onmouseover="document.querySelector('button#less').style.background='#222222'"
+             onmouseout="document.querySelector('button#less').style.background='#353535'"
+            >
+                -
+            </button>
+            <button
+             id="times"
+             value="x"
+             onclick="times()"
+             onmouseover="document.querySelector('button#times').style.background='#222222'"
+             onmouseout="document.querySelector('button#times').style.background='#353535'"
+            >
+                x
+            </button>
+            <button
+             id="divide"
+             value="/"
+             onclick="divide()"
+             onmouseover="document.querySelector('button#divide').style.background='#222222'"
+             onmouseout="document.querySelector('button#divide').style.background='#353535'"
+            >
+                /
+            </button>
+            <button
+             id="equal"
+             onmouseover="document.querySelector('button#equal').style.background='#222222'"
+             onmouseout="document.querySelector('button#equal').style.background='#353535'"
+            >
+                =
+            </button>
+         </div>
+     </div>
+    </section>
+            
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>

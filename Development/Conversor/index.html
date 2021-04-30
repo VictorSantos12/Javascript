@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <style>
+        #top{
+            background-color: rgb(66, 54, 134);
+
+        }
+        #main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2em;
+        }
+
+        .collun{
+            display: flex;
+            align-items: center;
+            flex-direction:column;
+            width: 300px;
+            height: 400px;
+            margin-bottom: 4em;
+            background-color: rgb(235, 232, 232);
+            box-shadow: rgba(0, 0, 0, 0.568) 1px 0px 8px 1px;
+        }
+
+        #real{
+            width: 200px;
+        }
+        #btn{
+            margin: 1em;
+            padding: 1em;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            border-style: none;
+            border-radius: 15px;
+            background: rgb(66, 54, 134);
+            box-shadow: rgba(0, 0, 0, 0.568) 1px 0px 8px 1px;
+        }
+       
+        
+        
+    </style>
+    <title>Conversor de Moedas</title>
+</head>
+<body>
+  <nav id="top" class="nav-bar">
+  </nav> 
+  <!-- bloco de conversão -->
+    <section id="main">
+       
+           <div class="collun">
+                <h4>Digite o Valor</h4>
+                <input id="real" type="text">
+                <div>
+                <input id="btn" class="doll" type="submit" value="USA $">
+                <input id="btn" class="euro"  type="submit" value="Euro €">
+                </div>
+                <h4>Valor Convertido</h4>
+                <div id="result" >
+
+                </div>
+           </div>
+            
+           
+</section>
+
+
+
+<script src="./main.js"></script>
+</body>
+</html>

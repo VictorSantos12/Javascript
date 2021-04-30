@@ -1,0 +1,92 @@
+body{
+    margin: 1em;
+}
+#main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#Calc {
+    display: flex;
+    height:150%;
+    margin: 30px;
+    padding-left: 30px;
+    border-radius: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(53, 53, 53);
+    box-shadow: 1px 1px 15px 8px rgb(214, 214, 214);
+}
+
+.block {
+   display: flex;
+   margin: 15px;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 8px 1px rgb(36, 36, 36);
+}
+
+.Values {
+   display: flex;
+   padding: 10px;
+   flex-direction: row;
+   border-top-right-radius: 30px;
+   border-bottom-right-radius: 30px;
+}
+
+.first {
+    display: flex;
+    flex-direction: column;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+}
+
+.third {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Operators {
+   display: flex;
+   padding: 10px;
+   flex-direction: column;
+   background-color: rgb(223, 59, 0);
+   border-top-right-radius: 30px;
+   border-bottom-right-radius: 30px;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: larger;
+    color: orangered;
+    border-radius: 20px;
+    background-color: #353535;
+    box-shadow: 1px 1px 8px 1px rgb(0, 0, 0);
+}
