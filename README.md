@@ -380,6 +380,8 @@ O push é um método interno do javascript que insere valor a um array, de forma
     ["Harry Potter", "O Hobbit", "Sapiens", "A Guerra dos Tronos"]
 
 <br>
+    
+    //Sintaxe
 
     arr.push(elemento1, ..., elementoN)
 
