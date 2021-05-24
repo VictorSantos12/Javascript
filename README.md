@@ -792,10 +792,11 @@ O método every( ) age como uma forma de validação lógica. Ele é submetido a
   <h5>
    A função isBigEnough(função de callback) define um valor padrão como return, quando submetemos as variáveis que guardam os array esse valor padrão é comparato com os valores contidos nas mesmas. Caso os valores não correspondam ao padrão, o método every() retorna um boolean to tipo false, caso correspondam, retorna true.
   </h5>
-  <h5>
-   Obs.: Os parâmetros element, index e array são parâmetros padrão de uso em uma função de callback, eles definem respectivamente: 
-  </h5>
 </div>
+
+<h5>
+ Obs.: Os parâmetros element, index e array são parâmetros padrão de uso em uma função de callback, eles definem respectivamente: 
+</h5>
 
 <ul>
  <li>O elemento atual sendo processado na array(Obrigatório);</li>
