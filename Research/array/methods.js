@@ -1,3 +1,4 @@
+
 // Concat( )
 
 // O método concat() retorna um novo array contendo todos os arrays ou valores passados como parâmetro
@@ -14,6 +15,7 @@ array3 = array1.concat(array2);
 console.log('\n' + 'Concat()' + '\n')
 
 console.log(array3);
+
 
 
 // Entries( )
@@ -192,7 +194,7 @@ console.log([1, 2, NaN].includes(NaN));
 
 
 
-// indexOf()
+// indexOf() 
 
 // O método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array, retorna -1
 // caso o mesmo não esteja presente.
