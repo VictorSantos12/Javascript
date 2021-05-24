@@ -798,8 +798,8 @@ O método every( ) age como uma forma de validação lógica. Ele é submetido a
 </h5>
 
 
-- O elemento atual sendo processado na array(Obrigatório);
-- O índice do elemento atual sendo processado na array(Opcional);
+- O elemento atual sendo processado no array(Obrigatório);
+- O índice do elemento atual sendo processado no array(Opcional);
 - O array de origem(Opcional);
 
 
@@ -837,7 +837,7 @@ O método filter é semelhante ao every(), porém, ele define como resultado tod
 <h2>Find()</h2>
 
   
-Como nome sugere, é utilizado para encontrar determinada informação, esta sendo pré definida. Caso um valor dentro da array corresponder ao valor pré definido, o método find() toma esse valor como resultado
+Como nome sugere, é utilizado para encontrar determinada informação, esta sendo pré definida. Caso um valor dentro da array corresponda ao valor pré definido, o método find() toma esse valor como resultado
 
     let data = [18, 100, 0.05]
 
