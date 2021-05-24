@@ -970,6 +970,7 @@ vazia sem valor inicial retornará um erro
 
 <h2>For</h2>
 
+
 O for é um mecanismo de looping do javascript. Adaptativo, é bastante usual quando é preciso definir o aparecimento de um bloco repetidas vezes. O mesmo funciona seguindo a sintaxe abaixo:
 
     for ([inicialização]; [condição]; [expressão de mudança])
@@ -984,23 +985,30 @@ O for é um mecanismo de looping do javascript. Adaptativo, é bastante usual qu
 
 <h2>Inicialização (Valor inicial)</h2>
 
+
 É onde se define as expressões ou variáveis que serão utilizadas no loop, sendo essas variáveis obrigatoriamente do tipo var
 
     let numb = 0;
 
+
 <h2>Condição (Enquanto...)</h2>
+
 
 Expressão que é avaliada antes de qualquer processo de execução no loop. Possuindo um valor padrão true, executa o bloco enquanto esse valor permanecer verdadeiro, e o encerra quando for falso. A definição de uma condição não é obrigatória para executar o loop, masi é necessária para definir  que esse loop é finito
 
     numb < 101
 
+
 <h2>Expressão de Mudança (faça...)</h2>
+
 
 <h5>Expressão que define uma alteração após cada ciclo de repetição do loop, normalmente definido alguma mudança, incrementando ou decremento</h5>
 
     numb++
 
+
 <h2>Declaração (faça...)</h2>
+
 
 A declaração é semelhante a expressão final, sendo executada apenas se a condição se mantiver verdadeira, em casos podendo substituír a própria expressão final
 
@@ -1013,46 +1021,111 @@ A declaração é semelhante a expressão final, sendo executada apenas se a con
 <h2>For(... in... )</h2>
 
 
+O laço for...in  interage sobre propriedades enumeradas de um objeto, na ordem original de inserção. O laço pode ser executado para cada propriedade distinta do objeto
+
+    var obj = {a:1, b:2, c:3};
+    
+    for (var prop in obj) {
+    
+      console.log("obj." + prop + " = " + obj[prop]);
+    }
+
+    //Console
+
+    obj.a = 1
+    obj.b = 2
+    obj.c = 3
+
 
 <h2>For(... of... )</h2>
 
-    const users = ["Victor", "Milena", "Matheus", "João", "Hugo"];
 
-    for( names of users ){
-        console.log(names)
-    };
+O loop for...of percorre objetos iterativos (incluindo Array, Map, Set, o objeto arguments e assim por diante), chamando uma função personalizada com instruções a serem executadas para o valor de cada objeto distinto
 
-    Terminal 
+    const users = [
+        user1 = {
+         name: "Victor",
+         age: 19,
+        },
+        user2 = {
+         name: "Milena",
+         age: 23,
+        },
+        user3 = {
+         name: "Matheus",
+         age: 30,
+        },
+        user4 = {
+         name: "João",
+         age: 22,
+        },
+        user5 = {
+         name: "Hugo",
+         age: 39
+     }
+    ];
+ 
+    for ( base of users ) {
+        console.log(base)
+    }
 
-    Victor
-    Milena
-    Matheus
-    João 
-    Hugo 
+    //Console
+
+    { name: 'Victor', age: 19 }
+    { name: 'Milena', age: 23 }
+    { name: 'Matheus', age: 30 }
+    { name: 'João', age: 22 }
+    { name: 'Hugo', age: 39 }
 
 
 <h2>Breack point</h2>
 
-    const users = ["Victor", "Milena", "Matheus", "João", "Hugo"];
 
-    for( names of users ){
-       console.log(names);
-        if(names === "João") {
-           break;
-        }
-    
-    };
-    
-    Terminal 
+O atributo break encerra o loop e retorna o array de acordo com o parâmetro definido
 
-    Victor
-    Milena
-    Matheus
-    João
+
+    const users = [
+        user1 = {
+         name: "Victor",
+         age: 19,
+        },
+        user2 = {
+         name: "Milena",
+         age: 23,
+        },
+        user3 = {
+         name: "Matheus",
+         age: 30,
+        },
+        user4 = {
+         name: "João",
+         age: 22,
+        },
+        user5 = {
+         name: "Hugo",
+         age: 39
+     }
+    ];
+ 
+    for ( base of users ) {
+       console.log(base)
+       if(base.name === "João") {
+         break;
+      }
+    }
+
+    //Console
+
+    { name: 'Victor', age: 19 }
+    { name: 'Milena', age: 23 }
+    { name: 'Matheus', age: 30 }
+    { name: 'João', age: 22 }
+
 
 <h2>While</h2>
 
-O while executa uma rotina enquanto a condição que ele contém for verdadeira. Sintaxe:
+
+O while executa uma rotina enquanto a condição que ele carrega for verdadeira. Sintaxe:
 
     while (condição) {
       rotina
@@ -1067,12 +1140,13 @@ Exemplo:
         console.log(numb)
     };
     
-    Terminal
+    //Console
     
     1
     2
     3
     4
     5
+    
     
 <h2>Switch</h2>

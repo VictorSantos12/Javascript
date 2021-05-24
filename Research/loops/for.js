@@ -107,3 +107,44 @@ let teclas = ["Tab", "Shift", "Ctrl"]
 for ( var position = 0 ; position < teclas.length ; position++ ) {
     console.log(`A posição ${position} guarda a tecla ${teclas[position]}`);
 }
+
+
+
+var obj = {a:1, b:2, c:3};
+
+for (var prop in obj) {
+
+  console.log("obj." + prop + " = " + obj[prop]);
+}
+
+
+
+const users3 = [
+    user1 = {
+     name: "Victor",
+     age: 19,
+    },
+    user2 = {
+     name: "Milena",
+     age: 23,
+    },
+    user3 = {
+     name: "Matheus",
+     age: 30,
+    },
+    user4 = {
+     name: "João",
+     age: 22,
+    },
+    user5 = {
+     name: "Hugo",
+     age: 39
+ }
+];
+
+for ( base of users3 ) {
+   console.log(base)
+   if(base.name === "João") {
+     break;
+  }
+}
