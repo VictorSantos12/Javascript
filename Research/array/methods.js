@@ -458,7 +458,7 @@ console.log([12, 5, 8, 1, 4].some(elem => elem > 10));
 
 // arr.sort([funcaoDeComparacao])
 
-let sort = [1, 456, 30, 17, 0.5];
+let numb = [1, 456, 30, 17, 0.5];
 
 console.log('\n' + `Sort()` + `\n`);
 

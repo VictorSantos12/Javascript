@@ -595,7 +595,7 @@ O método join( ) tem a função oposta ao método split( ), gerando um string a
 
 <h2>Concat( )</h2>
 
-O método concat( ) basicamente concatena dois arrays distintos.
+O método concat( ) basicamente concatena dois arrays distintos
 
     let array1 = [ 0, 1, 2, 3, 4, 5 ];
     let array2 = [ 6, 7, 8, 9, 10 ];
