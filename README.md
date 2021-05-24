@@ -921,11 +921,11 @@ O método reduce() executa uma função reducer (fornecida por você) para cada 
 
 <h2>Callback</h2>
 
-Função que é executada em cada valor no array (exceto no primeiro, se nenhum valorInicial for passado); recebe quatro argumentos:
+Função que é executada em cada valor no array (exceto no primeiro, se nenhum valorInicial for passado); recebe os seguintes argumentos:
 
 <h2>Acumulador</h2>
 
-Opcional. O índice do elemento atual que está sendo processado no array. Começa a partir do index 0 se um valorInicial for fornecido.
+Opcional. O índice do elemento atual que está sendo processado no array. Começa a partir do index 0 se um valor Inicial for fornecido.
 Do contrário, começa do index 1.
 
 <h2>ValorInicial</h2>
@@ -986,7 +986,7 @@ O for é um mecanismo de looping do javascript. Adaptativo, é bastante usual qu
 <h2>Inicialização (Valor inicial)</h2>
 
 
-É onde se define as expressões ou variáveis que serão utilizadas no loop, sendo essas variáveis obrigatoriamente do tipo var
+É onde se define as expressões ou variáveis que serão utilizadas no loop
 
     let numb = 0;
 
