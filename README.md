@@ -583,7 +583,7 @@ O método join( ) tem a função oposta ao método split( ), gerando um string a
 
     //Sintaxe
 
-    arr.join([separador = ','])
+    arr.join([separador = ' '])
 
 <div align="center">
   <h5>
