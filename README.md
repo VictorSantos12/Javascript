@@ -366,8 +366,8 @@ suas posições
 
 <h2>Push( )</h2>
 
-O push é um método interno do javascript que insere valor a um
-array, de forma que esse oculpe o ultimo indice do vetor
+
+O push é um método interno do javascript que insere valor a um array, de forma que esse oculpe o ultimo indice do vetor
 
     let books = ["Harry Potter", "O Hobbit", "Sapiens"];
 
@@ -378,10 +378,14 @@ array, de forma que esse oculpe o ultimo indice do vetor
     //Console
     
     ["Harry Potter", "O Hobbit", "Sapiens", "A Guerra dos Tronos"]
-    
+
+<br>
+
+    arr.push(elemento1, ..., elementoN)
 
 
 <h2>Unshift( )</h2>
+
 
 Tem a função inversa do método push( ), inserindo um elemento como primeiro indice do array
   
@@ -913,4 +917,4 @@ Exemplo:
     4
     5
     
-<h2>Switc</h2>
+<h2>Switch</h2>
