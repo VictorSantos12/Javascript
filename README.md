@@ -797,11 +797,10 @@ O método every( ) age como uma forma de validação lógica. Ele é submetido a
  Obs.: Os parâmetros element, index e array são parâmetros padrão de uso em uma função de callback, eles definem respectivamente: 
 </h5>
 
-<ul>
- <li>O elemento atual sendo processado na array(Obrigatório);</li>
- <li>O índice do elemento atual sendo processado na array(Opcional);</li>
- <li>O array de origem(Opcional);</li>
-</ul>
+
+- O elemento atual sendo processado na array(Obrigatório);
+- O índice do elemento atual sendo processado na array(Opcional);
+- O array de origem(Opcional);
 
 
 <h2>Filter()</h2>
