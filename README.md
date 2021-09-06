@@ -4,14 +4,33 @@
 <br>
 <img src="https://img.shields.io/static/v1?label=javascript&message=Language&color=yellow&style=for-the-badge&logo=JavaScript"/>
 
-O ECMAScript é uma linguagem de programação do tipo script, criada e implementada para o desenvolvimento Web. Popularmente conhecida como JavaScript, é uma linguagem de tipagem dinâmica fraca, e multiparadigmas
+O ECMAScript é uma linguagem de programação do tipo script, inicialmente criada e implementada com o propósito de otimizar client-side applications. Popularmente conhecida como JavaScript, é uma linguagem de tipagem dinâmica fraca e multiparadigmas.
+
+Tem um crescente ganho de popularidade desde meados dos anos 90, quando foi criada. E é muitas vezes associada aos navegadores, como o popular Google Chrome. Porém, graças a ferramentas como o Node, que faz uso da mesma engine V8 do já citado Chrome, é possível desvincular o Javascript do navegares e até mesmo do client-side.
+
+Além disso, ainda está presente na grande maioria das aplicações Web, seja mantendo sua sintaxe pura ou em conjunto com alguma lib como o React, Vue.js, ou frmawork, como o Angular; com seu superset de javascript mais conhecido como Typescript.
+
+
+<h2>Ambiente de Desenvolvimento</h2>
+
+
+Como já foi dito, o Javascript não mais se restringe aos navegadores, podendo ser compilado e interpretado localmente através do Node. No entanto, estes ambientes permitem interações distintas, como o acesso ao DOM na web, sobre o qual falaremos mais a frente. Portanto, é recomendado ter o Node instalado, pois ambas as formas de uso serão contempladas nesta documantação.
+
+Faça o download da versão LTS do Node disponível no link a seguir:
+
+
+[nodejs.org](https://nodejs.org/en/)
+
+
+Os exmplos no ambiente do navegador serão exmplificados através do Google Chrome, portanto, é recomendado fazer uso do mesmo para obter os mesmos resultados,
+
 
 <div align="center">
   <h1>Tipos de Dados</h1>
 </div>
 
 
-<h2>Primitive </h2>
+<h2>Primitive</h2>
 
 
 Os valores primitivos são chamados assim porque são imutáveis e, portanto, antigos dentro do Js. Não são representados por object, datatype que será visto mais à frente. Correspondem ao Primitive Type:
