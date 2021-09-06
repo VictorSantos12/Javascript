@@ -6,23 +6,112 @@
 
 O ECMAScript é uma linguagem de programação do tipo script, inicialmente criada e implementada com o propósito de otimizar client-side applications. Popularmente conhecida como JavaScript, é uma linguagem de tipagem dinâmica fraca e multiparadigmas.
 
-Tem um crescente ganho de popularidade desde meados dos anos 90, quando foi criada. E é muitas vezes associada aos navegadores, como o popular Google Chrome. Porém, graças a ferramentas como o Node, que faz uso da mesma engine V8 do já citado Chrome, é possível desvincular o Javascript do navegares e até mesmo do client-side.
+Tem um crescente ganho de popularidade desde meados dos anos 90, quando foi criada. E é muitas vezes associada aos navegadores, como o popular Google Chrome. Porém, graças a ferramentas como o Node, que faz uso da mesma engine V8 do já citado Chrome, é possível desvincular o Javascript dos navegares e até mesmo do client-side.
 
-Além disso, ainda está presente na grande maioria das aplicações Web, seja mantendo sua sintaxe pura ou em conjunto com alguma lib como o React, Vue.js, ou frmawork, como o Angular; com seu superset de javascript mais conhecido como Typescript.
-
-
-<h2>Ambiente de Desenvolvimento</h2>
+Além disso, ainda está presente na grande maioria das aplicações Web, seja mantendo sua sintaxe pura ou em conjunto com alguma lib como o React, Vue.js, ou frmawork, como o Angular; com seu superset mais conhecido como Typescript.
 
 
-Como já foi dito, o Javascript não mais se restringe aos navegadores, podendo ser compilado e interpretado localmente através do Node. No entanto, estes ambientes permitem interações distintas, como o acesso ao DOM na web, sobre o qual falaremos mais a frente. Portanto, é recomendado ter o Node instalado, pois ambas as formas de uso serão contempladas nesta documantação.
+<h2>Hello World</h2>
 
-Faça o download da versão LTS do Node disponível no link a seguir:
+
+Como já foi dito, o Javascript não mais se restringe aos navegadores, podendo ser compilado e interpretado localmente através do Node. No entanto, estes ambientes permitem interações distintas, como o acesso ao DOM na web, sobre o qual falaremos mais a frente. Portanto, é recomendado ter o Node instalado pois ambas as formas de uso serão contempladas nesta documantação.
+
+
+<h2>Chrome</h2>
+
+
+Para executar códigos Javascript no navegar siga o passo a passo descrito abaixo:
+
+* Abra uma janela do Chrome ou do navegador que optar
+* Precione Ctrl + Shit + i para abrir as dev tools
+
+Diretamente no console execute o código a seguir:
+
+
+    < var a = "Hello, world"
+    > undefined
+    > a
+    < 'Hello, world'
+
+
+<h2>Node</h2>
+
+
+Para executar códigos Javascript no ambiente Node, faça o download da sua versão LTS disponível no link a seguir:
 
 
 [nodejs.org](https://nodejs.org/en/)
 
 
-Os exmplos no ambiente do navegador serão exmplificados através do Google Chrome, portanto, é recomendado fazer uso do mesmo para obter os mesmos resultados,
+Para verificar a instalação, execute o comando a seguir no terminal de comando revelando a versão presente na sua máquina:
+
+
+    node -v
+
+
+Após verificar a instalação, já é possível fazer uso do ambiente. Para isso, ainda no terminal de comando, execute o código a seguir:
+
+
+    > var a = "Hello, world"
+    undefined
+    > a
+    'Hello, world'
+
+
+Perceba que o resultado é exatamente o mesmo obtido no navegador. Isso mostra a mesma eficácia no processo de interpretação do código em ambos os ambiente. Mas um detalhe que os torna diferentes é visto no exemplo a seguir:
+
+Ainda nas dev tools do navegador, digite a chamada a seguir:
+
+    
+    document.
+
+
+Note que há uma série de opções atreladas ao <i>document</i>(parte da tela em destaque), sendo este o já citado DOM(Document Object Model). Ao executar a mesma chamada no terminal node temos o seguinte resultado:
+
+
+    > document
+    Uncaught ReferenceError: document is not defined
+
+
+Isso se dá pois não há uma definição de document fora do ambiente do navegador, portanto, o node não o reconhece.
+
+
+<h2>VSCode</h2>
+
+
+Além do Node ou dos navegadores, também é possível executar códigos Javascript em ferramentas como o VSCode, esta que pode ser baixada no link a seguir:
+
+
+[Visual Studio Code](https://code.visualstudio.com/)
+
+
+Após o término da instalação, siga o passo a passo a seguir:
+
+
+* Acesse o cmd 
+* Use o comando cd/ para acessar o disco local C:
+* Nele crie um diretório com o comando mkdir + nome
+* Acesse o diretório através do comando cd + nome
+* Abra o arquivo no VSCode através do comando code .
+
+
+Tendo aberto o novo diretório no VSCode, crie um novo arquivo chamado de main.js e nele defina as seguintes linhas de código:
+
+
+    var message = "Hello World";
+    
+    console.log(message);
+
+
+É possível executar o arquivo atráves do Run Code buttom no canto superior direito ou através do comando Ctrl + Alt + N, tendo como resultado:
+
+
+    [Done] exited with code=0 in 0.15 seconds
+    
+    [Running] node "c:\JavaScript\main.js"
+    Hello World
+    
+    [Done] exited with code=0 in 0.122 seconds
 
 
 <div align="center">
