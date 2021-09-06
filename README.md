@@ -402,11 +402,8 @@ Age de forma a vincular um valor a uma variável já numerada, ou valorada, de f
 <h2>Relacionais</h2>
 
 
-Estruturas que analisam dois elementos determinando qual é a relação entre ambos, se de igualdade, superioridade numérica, superioridade semântica, etc. Sendo o resultado dessa operação um boolean, ela pode ser utilizado de inúmeras formas
+Estruturas que analisam dois elementos determinando qual é a relação entre ambos, se de igualdade, superioridade numérica, superioridade semântica, etc. Sendo o resultado desta operação um boolean:
 
-> Maior que( > )    Menor que( < )     Maior ou igual( >= )    Menor ou igual( <= )    Igual( == )     Diferente( != ) 
-   
-<h5>Exemplos</h5>
 
      > 30 > 15
      true
@@ -425,8 +422,8 @@ Estruturas que analisam dois elementos determinando qual é a relação entre am
 <h2>Igualdade Restrita ===</h2>
 
 
-Operador variante do que define igualdade, sendo representado por ===, ele define se os valores em operação são identicos, tanto 
-em valor numerico quanto em valor semantico, além de definir se são do mesmo tipo
+Operador variante do que define igualdade, sendo representado por ===, ele define se os valores em operação são identicos, tanto em valor numerico quanto em valor semantico, além de definir se são do mesmo tipo:
+
 
     > "nome" === 7
     false
@@ -436,21 +433,19 @@ em valor numerico quanto em valor semantico, além de definir se são do mesmo t
     false
 
 
-<div align="center">
-  <h1>Operadores Lógicos</h1>
-</div>
+
+<h2>Operadores Lógicos</h2>
 
 
 Com suas restrições, os operadores lógicos tipicamente são usados com booleans e retornam booleans, executando uma operação
-entre dois ou mais operandos, definindo um valor lógico final com base no valor lógico dos operandos que contenham
+entre dois ou mais operandos, definindo um valor lógico final com base no valor lógico dos operandos que contenham:
 
 
-<h2>Negação !</h2>
+<h3>Negação !</h3>
 
 
->! - Chamado de NÃO/NOT lógico
+Define que o valor lógico de qualquer objeto, variável ou item que o receba sempre será false, exceto se já for false:
 
-Define que o valor lógico de qualquer objeto, variável o item que o receba sempre será false, exceto em casos em que esse valor já for do tipo false, ou seja, ele define o oposta do valor inicial de quem o recebe
 
     > !true
     false
@@ -458,12 +453,11 @@ Define que o valor lógico de qualquer objeto, variável o item que o receba sem
     true
 
 
-<h2>Conjunção &&</h2>
+<h3>Conjunção &&</h3>
 
 
->&& - Chamado de E/AND lógico
+O operador de conjunção, representado por && (também chamado de “e comercial”) tem a função semântica de conjunto: "um elemento e outro com ele". Segue uma sintaxe binária, onde há dois operandos, sendo eles verdadeiro e falso. Se ambos forem verdadeiros a operação retorna true, se apenas um for falso, assim caso sejam os dois, o valor retornado é false:
 
-O operador de conjunção, representado por && (também chamado de “e comercial”) tem a função semântica de conjunto: "um elemento e outro com ele". Segue uma sintaxe binária, onde há dois operandos, sendo eles verdadeiro e falso. Se ambos forem verdadeiros a operação retorna true, se apenas um for falso, assim caso sejam os dois, o valor retornado é false
 
     > "number" === 1 && null === null
     false
@@ -471,13 +465,12 @@ O operador de conjunção, representado por && (também chamado de “e comercia
     true
 
 
-<h2>Disjunção ||</h2>
+<h3>Disjunção ||</h3>
 
-
->|| - Chamado de OU lógico 
     
-A disjunção literalmente diz para o programa que pode aceitar dentre dois operandos um false como resultante. Mas ele não aceita que ambos sejam do tipo false sem determinar o resultado final como false. Caso apenas um seja true, assim como os dois, o resultado final será true
+A disjunção define que a operação pode aceitar dentre dois operandos um false como resultante. Mas ele não aceita que ambos sejam do tipo false sem determinar o resultado final como false. Caso apenas um seja true, assim como os dois, o resultado final será true:
    
+
     > false || false
     false
     > true || false
