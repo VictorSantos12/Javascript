@@ -205,7 +205,7 @@ O Null é tido como o anulador dentro do JavaScript, onde seu valor único é Nu
 <h2>Undefined</h2>
 
  
-O Undefined type é atribuído a uma variável cujo valor é indefinido dentro do programa;
+O Undefined type é atribuído a uma variável cujo valor é indefinido dentro do programa:
 
 
     > var undefined;
@@ -419,7 +419,7 @@ Estruturas que analisam dois elementos determinando qual é a relação entre am
      false
 
 
-<h2>Igualdade Restrita ===</h2>
+<h3>Igualdade Restrita ===</h3>
 
 
 Operador variante do que define igualdade, sendo representado por ===, ele define se os valores em operação são identicos, tanto em valor numerico quanto em valor semantico, além de definir se são do mesmo tipo:
@@ -480,6 +480,9 @@ A disjunção define que a operação pode aceitar dentre dois operandos um fals
 
 
 <h1>Unidades de Armazenamento</h1>
+
+
+Assim como em qualquer linguagem de programação, as unidades de armazenamento no Javascript armazenam e referenciam dados, tendo aqui algumas características e variações importantes a serem mencionadas:
 
 
 <h2>Var</h2>
@@ -583,18 +586,121 @@ Apesar do resultado, não é impossível editar o valor que uma const carrega, p
     { nome: 'João' }
 
 
+<h1>Declarações de Controle de Fluxo</h1>
+
+
+O JavaScript suporta um conjunto compacto de declarações, especificamente de fluxo de controle, que podem ser utilizadas para atribuir uma grande interatividade com os dados:
+
+
+<h2>Declaração if... else</h2>
+
+
+Define a execução de uma declaração caso a condição definida seja atendida, e outra caso não seja. É definida pela sintaxe a seguir:
+
+
+    if (condicao) {
+
+      declaracao_1;
+
+    } else if(condicao) {
+
+      declaracao_2;
+    } 
+    
+    ...
+
+    else {
+      declaracao_n;
+    }
+
+
+A condição é definida por uma exepressão lógica que resulte em um boolean ou um valor que leve o mesmo tipo. Caso a primeira condição não for atendida a seguinte é verificada, sendo a declaração definida no else a última possível.
+
+
+<h2>Declaração switch</h2>
+
+
+Uma declaração switch permite que um programa avalie uma expressão e tente associar o valor da expressão ao rótulo de um case. Se uma correspondência é encontrada, o programa executa a declaração associada. Uma declaração switch é definida pela sintaxe a seguir:
+
+
+    switch (expressao) {
+      case rotulo_1:
+        declaracoes_1
+        [break;]
+      case rotulo_2:
+        declaracoes_2
+        [break;]
+      ...
+
+      default:
+        declaracoes_padrao
+        [break;]
+    }
+
+
+A expressão declarada será comparada aos cases definidos como um rótulo com um valor. Esses valores serão comparados ao valor da expressão e caso um deles corresponda, a declaração deste será executada. Há também a expressão condicional break, que define o fim da operação caso a sua declaração seja executada. 
+
+Se nenhum rótulo correspondente é encontrado, o programa procura pela cláusula opcional default, que, por convenção, é a última, não sendo um padrão obrigatório.
+
+
+<h2>Declaração try...catch</h2>
+
+
+A declaração try...catch coloca um bloco de declarações em try, e especifica uma ou mais respostas para uma exceção lançada. Se uma exceção é lançada, a declaração catch é responsável por tratá-la.
+
+A declaração try...catch é composta por um bloco try, que contém uma ou mais declarações, e zero ou mais blocos catch, contendo declarações que especificam o que fazer se uma exceção é lançada no bloco try. Ou seja, caso o bloco try não tenha sucesso é ossível tratar a exceção resultante. Uma declaração try...catch é definida pela sintaxe a seguir:
+
+
+    try {
+    
+      declaracoes
+    
+    } catch (e[error]) {
+     
+      declaracoes
+     
+    }
+
+
+<h1>Funções</h1>
+
+
+Uma função é definida pela executação de uma rotina que envolva ou não o retorno de valores, estes podendo ser recebitos via parãmetro. Uma função Javascript se dá por:
+
+
+* Declaração da palavra-chave <i>function</i>
+* Nome da função
+* Definição de parâmetros opcionais declarados entre parênteses
+* Body da função declarado entre chaves <b>{ }</b>
+
+
+Por exemplo, o código a seguir define uma função simples chamada square:
+
+
+    function square(numero) {
+      return numero * numero;
+    }
+
+
+A função <i>square</i> recebe por parâmetro um valor chamado de <i>numero</i>. Esse valor será tratado e retornado pela função, sendo multiplicado por ele mesmo neste caso. O bloco de execução de uma função, ou body, pode conter a chamada de outras funções, a declaração de variáveis, estruturas de controle de fluxo e mais.
+
+
 <h1>Vetores</h1>
 
 
 Um vetor, array ou mesmo variável compostas, difere de uma variável simples apenas pela capacidade de armazenar multiplos dados na sua estrutura
 
+
     var exemplo = [item1, item2, item3];
 
+
 Um Array é defindo dentro de uma variável comum que recebe [ ] definindo que mais de um valor será declarado. Os valores podem ser acessados por suas posições
+
 
     var food = ["Pizza", "Bolo", "Macarrão"];
 
     console.log(food[0], food[1], food[2]);
+
 
 Um detalhe importante a se ater é que a contagem de posições, ou indices, de um vetor sempre se inicia em 0
 
@@ -1143,14 +1249,14 @@ Função que é executada em cada valor no array (exceto no primeiro, se nenhum 
 
 <h2>Acumulador</h2>
 
-Opcional. O índice do elemento atual que está sendo processado no array. Começa a partir do index 0 se um valor Inicial for fornecido.
-Do contrário, começa do index 1.
+Opcional. O índice do elemento atual que está sendo processado no array. Começa a partir do index 0 se um valor Inicial for fornecido. Do contrário, começa do index 1.
 
-<h2>ValorInicial</h2>
 
-Opcional. Valor a ser usado como o primeiro argumento da primeira chamada da função callback. Se nenhum valorInicial é fornecido, o
-primeiro elemento do array será usado como o valor inicial do acumulador e o valorAtual não será lido. Chamar reduce() em uma array
-vazia sem valor inicial retornará um erro
+<h2>Valor Inicial</h2>
+
+
+Opcional. Valor a ser usado como o primeiro argumento da primeira chamada da função callback. Se nenhum valorInicial é fornecido, o primeiro elemento do array será usado como o valor inicial do acumulador e o valorAtual não será lido. Chamar reduce() em uma array vazia sem valor inicial retornará um erro:
+
 
     const reduce = [
       { nome: "Luan", idade: 25, sexo: "Masculino"},
@@ -1181,7 +1287,7 @@ vazia sem valor inicial retornará um erro
     }
 
 
-<div align="center">
+<!-- <div align="center">
   <h1>Criando Loops</h1>
 </div>
 
@@ -1369,4 +1475,4 @@ Exemplo:
     
 <h2>Switch</h2>
 
-
+ -->
