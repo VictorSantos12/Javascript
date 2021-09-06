@@ -297,14 +297,14 @@ Resulta no resto de uma divisão entre operandos:
 <h2>Incremento</h2>
 
 
-O incremento age como um anexador de valor para a variável, podendo incluir um número a ela, ou redefini-la, sempre de forma crescente.
-Possui duas formas com função diferente para cada uma:
+O incremento age como um anexador de valor para a variável, podendo incluir um número a ela, ou redefini-la, sempre de forma crescente:
  
 
-<h2>Pré Fixado ++X</h2>
+<h3>++X</h3>
 
 
 Sendo x a variável, é chamado de operador pré fixado, já que é definido antes da variável. Sua função é atribuir valor a sua variável e mostrar o resultado após a soma
+
 
     > var a  = 1
     undefined
@@ -312,10 +312,11 @@ Sendo x a variável, é chamado de operador pré fixado, já que é definido ant
     2
 
 
-<h2>Pós Fixado X++</h2>
+<h3>X++</h3>
 
 
 É chamado de operador pós fixado, sendo definido após a variável. Sua função também é atribuir valor a sua variável, mas não altera visialmente o valor da mesma
+
 
     > var a  = 1
     undefined
@@ -328,13 +329,14 @@ Sendo x a variável, é chamado de operador pré fixado, já que é definido ant
 <h2>Decremento</h2>
 
 
-O decremento age como um redultor de valor para a variável, podendo retirar um número da mesma, ou redefini-la, sempre de forma decrescente. Possui duas formas com função diferente para cada uma:
+O decremento age como um redultor de valor para a variável, podendo retirar um número da mesma, ou redefini-la, sempre de forma decrescente:
 
 
-<h2>Pré Fixado --X</h2>
+<h2>--X</h2>
 
 
 <h5>Causa decremento ao valor atribuído à variável</h5>
+
 
     > var b = 2
     undefined
@@ -342,10 +344,11 @@ O decremento age como um redultor de valor para a variável, podendo retirar um 
     1
 
 
-<h2>Pós Fixado X--</h2>
+<h2>X--</h2>
 
 
 Causa decremento ao valor atribuído à variável, não causando alteração visual nesse valor
+
 
     > var b = 2
     undefined
@@ -358,7 +361,8 @@ Causa decremento ao valor atribuído à variável, não causando alteração vis
 <h2>Auto Atribuições</h2>
 
 
-Age de forma a vincular um valor a uma variável já numerada, ou valorada, de forma que essa variável use do valor nela antes incluído para se auto atribuir, reduzir, multiplicar ou dividir, através de uma operação dentro dela mesma, e com ela mesma.
+Age de forma a vincular um valor a uma variável já numerada, ou valorada, de forma que esta use do valor nela antes incluído para se auto atribuir, reduzir, multiplicar ou dividir, através de uma operação dentro dela mesma, e com ela mesma.
+
 
     > var a = 4
     undefined
@@ -378,21 +382,21 @@ Age de forma a vincular um valor a uma variável já numerada, ou valorada, de f
 <h3>Forma Comum</h3>        
 
   
-  >t = t - 4  
-  >t = t * 4  
-  >t = t / 4  
-  >t = t **4  
-  >t = t % 4  
+    t = t - 4  
+    t = t * 4  
+    t = t / 4  
+    t = t **4  
+    t = t % 4  
 
 
 <h3>Simplificada</h3>
 
   
-  >t -= 4<br>
-  >t *= 4<br>
-  >t /= 4<br>
-  >t **= 4<br>
-  >t %= 4<br>
+    t -= 4
+    t *= 4
+    t /= 4
+    t **= 4
+    t %= 4
 
 
 <h2>Relacionais</h2>
