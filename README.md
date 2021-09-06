@@ -11,7 +11,7 @@ Tem um crescente ganho de popularidade desde meados dos anos 90, quando foi cria
 Além disso, ainda está presente na grande maioria das aplicações Web, seja mantendo sua sintaxe pura ou em conjunto com alguma lib como o React, Vue.js, ou frmawork, como o Angular; com seu superset mais conhecido como Typescript.
 
 
-<h2>Hello World</h2>
+<h1>Hello World</h1>
 
 
 Como já foi dito, o Javascript não mais se restringe aos navegadores, podendo ser compilado e interpretado localmente através do Node. No entanto, estes ambientes permitem interações distintas, como o acesso ao DOM na web, sobre o qual falaremos mais a frente. Portanto, é recomendado ter o Node instalado pois ambas as formas de uso serão contempladas nesta documantação.
@@ -22,7 +22,7 @@ Como já foi dito, o Javascript não mais se restringe aos navegadores, podendo 
 
 Para executar códigos Javascript no navegar siga o passo a passo descrito abaixo:
 
-* Abra uma janela do Chrome ou do navegador que optar
+* Abra uma janela do Chrome ou do navegador que preferir
 * Precione Ctrl + Shit + i para abrir as dev tools
 
 Diretamente no console execute o código a seguir:
@@ -43,7 +43,7 @@ Para executar códigos Javascript no ambiente Node, faça o download da sua vers
 [nodejs.org](https://nodejs.org/en/)
 
 
-Para verificar a instalação, execute o comando a seguir no terminal de comando revelando a versão presente na sua máquina:
+Para verificar a instalação, execute o comando a seguir no terminal de comando, revelando a versão presente na sua máquina:
 
 
     node -v
@@ -58,9 +58,9 @@ Após verificar a instalação, já é possível fazer uso do ambiente. Para iss
     'Hello, world'
 
 
-Perceba que o resultado é exatamente o mesmo obtido no navegador. Isso mostra a mesma eficácia no processo de interpretação do código em ambos os ambiente. Mas um detalhe que os torna diferentes é visto no exemplo a seguir:
+Perceba que o resultado é exatamente o mesmo obtido no navegador. Isso mostra a mesma eficácia no processo de interpretação do código em ambos os ambientes. Mas um detalhe que os torna diferentes é visto no exemplo a seguir:
 
-Ainda nas dev tools do navegador, digite a chamada a seguir:
+Ainda nas dev tools do navegador, digite a seguinte chamada:
 
     
     document.
@@ -98,7 +98,7 @@ Após o término da instalação, siga o passo a passo a seguir:
 Tendo aberto o novo diretório no VSCode, crie um novo arquivo chamado de main.js e nele defina as seguintes linhas de código:
 
 
-    var message = "Hello World";
+    var message = "Hello, world";
     
     console.log(message);
 
@@ -109,59 +109,109 @@ Tendo aberto o novo diretório no VSCode, crie um novo arquivo chamado de main.j
     [Done] exited with code=0 in 0.15 seconds
     
     [Running] node "c:\JavaScript\main.js"
-    Hello World
+    Hello, world
     
     [Done] exited with code=0 in 0.122 seconds
 
 
-<div align="center">
-  <h1>Tipos de Dados</h1>
-</div>
+
+<h1>Built-in Types</h1>
+
+
+O Javascript é uma linguagem dinamicamente tipada, ou seja, nela é possível declarar uma variável como tendo determinado tipo ou mesmo omití-lo, dando ao valor atribuido a esta a função de determinar seu type. Estes tipos são:
 
 
 <h2>Primitive</h2>
 
 
-Os valores primitivos são chamados assim porque são imutáveis e, portanto, antigos dentro do Js. Não são representados por object, datatype que será visto mais à frente. Correspondem ao Primitive Type:
+Os valores primitivos são chamados assim porque são imutáveis e, portanto, antigos dentro do Javascript. Correspondem ao Primitive Type:
 
 
-<h2>String </h2>
+<h3>String</h3>
 
 
-O tipo string é voltado para a representação de dados textuais ou alfanuméricos imutáveis;
+O tipo string define a representação de dados textuais ou alfanuméricos imutáveis. Veja o exemplo a seguir:
+
+    
+    > var string = ''
+    undefined
+    > var string = 'some text'
+    undefined
+    > string
+    'some text'
 
 
-<h2>Number</h2> 
+Veja que uma variável pode ter seu valor sobrescrito quando redefinida, demonstrando a tipagem dinâmica que define o Javascript.
 
 
-O tipo number, como o nome sugere, tem  a função de representação numérica no Js. Essa representação recebe uma designação de infinity, podendo ser - (negativa) ou + >(positiva). Uma representação dessa designação pode ser vista a seguir:
-
-> 42 / +0 Infinity > 42 / -0 -Infinity
- Onde as variações podem ser tanto do valor quanto do sinal;
- 
-
-<h2>NaN</h2>
+<h3>Number</h3> 
 
 
-Um NaN, ou Not-a-Number, é uma propriedade do objeto global ;
+O tipo number, como o nome sugere, tem  a função de representação numérica. Essa representação recebe uma designação de infinity, podendo ser - (negativa) ou + >(positiva). Uma representação dessa designação pode ser vista a seguir, onde as variações podem ser tanto do valor quanto do sinal:
+
+
+    42 / +0 Infinity > 42 / -0 -Infinity
+
+
+A seguir há um exemplos de definição do tipo number:
+
+  
+    > var number = 12344;
+    undefined
+    > var number = -12344;
+    undefined
+    > number
+    -12344
+
+
+<h3>NaN</h3>
+
+
+Um NaN, ou Not-a-Number, é uma propriedade do objeto global que define um tipo não numérico:
+
+
+    > var nan = NaN
+    undefined
+    > number
+    NaN
   
 
-<h2>Boolean</h2>
+<h3>Boolean</h3>
 
 
-O Boolean Type é considerado uma entidade lógica com apenas dois resultados possíveis: true (verdadeiro) e false (falso); 
+O Boolean Type é considerado uma entidade lógica com apenas dois resultados possíveis: true (verdadeiro) e false (falso):
+
+
+    > var bool = false;
+    undefined
+    > var bool = true;
+    undefined
+    > bool
+    true
 
 
 <h2>Null</h2>
 
 
-O Null é tido como o anulador dentro do JavaScript, onde seu valor único é Null (nulo);
+O Null é tido como o anulador dentro do JavaScript, onde seu valor único é Null (nulo):
+
+
+    > var nullable = null;
+    undefined
+    > nullable
+    null
 
 
 <h2>Undefined</h2>
 
  
 O Undefined type é atribuído a uma variável cujo valor é indefinido dentro do programa;
+
+
+    > var undefined;
+    undefined
+    > undefined
+    undefined
 
 
 <h2>Symbol</h2>
@@ -173,115 +223,76 @@ São mais recentes na linguagem que os anteriores. São utilizados como chaves d
 <h2>Object</h2>
 
 
-O JavaScript é uma linguagem projetada com base em paradigmas orientados a objetos. Um objeto é uma junção de propriedades, que são definidas pela associação entre um nome e um valor. Em JavaScript, um objeto possui as mesmas características de um objeto na nossa realidade. Os objetos ao nosso redor têm forma, tamanho, peso, cor e inúmeras características que os definem. No JavaScript há objetos que são caracterizados por suas propriedades e, portanto, possuem variações como na vida real. 
+O JavaScript é uma linguagem projetada com base em paradigmas orientados a objetos. Um objeto é uma junção de propriedades, que são definidas pela associação entre um nome e um valor. Em JavaScript, um objeto possui as mesmas características de um objeto na nossa realidade. No JavaScript os objetos são caracterizados por suas propriedades e, portanto, possuem variações como objetos reais. Veremos mais sobre o Javascript orientado a objetos mais a frente.
 
 
-<div align="center">
-   <h1>Armazenando Dados</h1>
-</div>
+
+<h2>Operadores Aritméticos</h2>
 
 
-<h2>Var</h2>
+O Javascript suporta os operadores aritméticos usuais, como mostrado abaixo:
 
 
-Elemento que carrega consigo algum valor atrubuído. Sendo definida como global, ela pode ser utilizada em qualquer lugar da aplicação. Exemplos:
-
-  <h4>Declarada fora de qualquer bloco</h4>
- 
-     var userAge = 19
-     console.log(userAge)
-
-  <h4>Declarada fora de um bloco existente</h4>
- 
-    var userCep = 53777500
-    if(true){
-        console.log(userCep)
-    }
-
-  <h4>Declarada dentro de um bloco existente</h4>
-
-    if(true){
-        var userNumb = 81991173016;
-        console.log(userNumb)
-    }
+<h3>Soma +</h3>
 
 
-<h2>Let</h2>
+Soma os operandos:
+
+  
+    > 2 + 3
+    5
 
 
-Possui função semelhante a de uma var, porém, só pode ser utilizada no trecho de código que a contém
-
-    if(true){
-        let userProfession = 'Software Developer'
-        console.log(userProfession)
-    }
-
-    ou
-
-    let userProfession = 'Software Developer'
-    if(true){
-        console.log(userProfession)
-    }
+<h3>Subtração -</h3>
 
 
-<h3>Causando um Erro</h3>
+Subtrai os operandos:
+
+  
+    > 2 - 3
+    -1
 
 
-    if(true){
-        let userProfession = 'Software Developer'
-    }
-    console.log(userProfession)
-
-    //Console
-
-    ReferenceError: userProfession is not defined
+<h3>Muiltiplicação *</h3>
 
 
-<h2>Const</h2>
+Multiplica os operandos:
 
 
-Assim como uma let, uma const possui a limitação de ter seu uso restrito ao trecho de código que a contém, porém, as semelhanças acabam aqui. Uma constante, por definição, possui um valor imutável em casos como os vistos acima. Veja:
-
-    if(true) {
-        const userName = 'Victor'
-        userName = 'João'
-        console.log(userName)
-    }
-
-    //Console
-
-    userName = 'João'
-             ^
-
-    TypeError: Assignment to constant variable.
+    > 10 * 150
+    1500
 
 
-<h3>Corrigindo</h3>
+<h3>Divisão /</h3>
 
 
-Apesar do resultado, não é impossível editar o valor que uma const carrega, o ponto é, o dado que a mesma contém precisa ser de um tipo especifico, como um objeto ou array por exemplo: 
+Divide os operandos:
 
-
-    if(true){
-        const user = {nome: 'Victor'};
-        user.nome = "João"
-        console.log(user)
-    }
- 
-    //Console
-
-    { nome: 'João' }
     
-    
-<div align="center">
-  <h1>Operadores</h1>
-</div>
+    > 15 / 17
+    0.8823529411764706
 
 
-<h2>Aritméticos</h2>
+<h3>Exponenciação **</h3>
+
+   
+Aleva um operando determinada quantidade de vezes:
+
+    > 2 ** 8
+    256
 
 
-  >soma(+) subtração(-) multiplicação(*) divisão(/) exponenciação (**) módulo(%) 
+<h3>Módulo %</h3>
+
+
+Resulta no resto de uma divisão entre operandos:
+
+
+    > 3 % 9
+    3
+    > 9 % 3
+    0
+
 
 <h2>Incremento</h2>
 
@@ -469,11 +480,113 @@ A disjunção literalmente diz para o programa que pode aceitar dentre dois oper
     true
     > true || true
     true
-   
 
-<div align="center">
-  <h1>Vetores</h1>
-</div>
+
+<h1>Unidades de Armazenamento</h1>
+
+
+<h2>Var</h2>
+
+
+Elemento que carrega consigo algum valor atrubuído, e é definido pela valavra-chave <i>var</i> + um identificador. Sendo definida como global, ela pode ser utilizada em qualquer parte do código:
+
+
+<h4>Declarada fora de qualquer bloco</h4>
+  
+
+     var userAge = 19
+     console.log(userAge)
+
+
+<h4>Declarada fora de um bloco existente</h4>
+ 
+
+    var userCep = 53777500
+    if(true){
+        console.log(userCep)
+    }
+
+
+<h4>Declarada dentro de um bloco existente</h4>
+
+
+    if(true){
+      var userNumb = 81991173016;
+      console.log(userNumb)
+    }
+
+
+<h2>Let</h2>
+
+
+Definida pela palavra-chave <i>let</i> + um identificador, possui função semelhante a de uma var, porém, só pode ser utilizada no trecho de código que a contém:
+
+
+    if(true){
+      let userProfession = 'Software Developer'
+      console.log(userProfession)
+    }
+
+    ou
+
+    let userProfession = 'Software Developer'
+    
+    if(true){
+        console.log(userProfession)
+    }
+
+
+<h3>Causando um Erro</h3>
+
+
+    if(true){
+      let userProfession = 'Software Developer'
+    }
+    console.log(userProfession)
+
+    //OutPut:
+
+    ReferenceError: userProfession is not defined
+
+
+<h2>Const</h2>
+
+
+Assim como uma let, uma const possui a limitação de ter seu uso restrito ao trecho de código que a contém, porém, as semelhanças acabam aqui. Uma constante, por definição, possui um valor imutável em casos como os vistos acima. Veja:
+
+
+    if(true) {
+      const userName = 'Name'
+      userName = 'Name'
+      console.log(userName)
+    }
+
+    //OutPut:
+
+    userName = 'João'
+             ^
+
+    TypeError: Assignment to constant variable.
+
+
+<h3>Corrigindo</h3>
+
+
+Apesar do resultado, não é impossível editar o valor que uma const carrega, porém, o dado que a mesma contém precisa ser de um tipo específico, como um objeto ou array por exemplo: 
+
+
+    if(true){
+        const user = {nome: 'Victor'};
+        user.nome = "João"
+        console.log(user)
+    }
+ 
+    //OutPut:
+
+    { nome: 'João' }
+
+
+<h1>Vetores</h1>
 
 
 Um vetor, array ou mesmo variável compostas, difere de uma variável simples apenas pela capacidade de armazenar multiplos dados na sua estrutura
