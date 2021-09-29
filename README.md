@@ -685,11 +685,46 @@ Por exemplo, o código a seguir define uma função simples chamada square:
 A função <i>square</i> recebe por parâmetro um valor chamado de <i>numero</i>. Esse valor será tratado e retornado pela função, sendo multiplicado por ele mesmo neste caso. O bloco de execução de uma função, ou body, pode conter a chamada de outras funções, a declaração de variáveis, estruturas de controle de fluxo e mais.
 
 
-<h2>Funções Tipadas</h2>
+<h2>Funções aninhadas e closures</h2>
+
+
+Aninhar uma função define declarar uma function dentro do escopo de outra, restringindo seu usa ao trecho de declaração. Uma função aninha, por padrão, herda os parâmetros passados na sua function parent. Isso determina que uma função aninhada também é uma closure. Em outras palavras, a função interior contém o escopo da função exterio. 
+
+Em resumo:
+
+- A função interna só pode ser acessada a partir de declarações em função externa.
+- A função interna forma uma closure: a função  interna pode usar os argumentos e variáveis da função externa, enquanto a função externa não pode usar os argumentos e variáveis da função interna.
+
+Exemplo:
+
+
+    function addSquares(a,b) {
+       function square(x) {
+          return x * x;
+       }
+       return square(a) + square(b);
+    }
+
+    a = addSquares(2,3); // retorna 13
+    b = addSquares(3,4); // retorna 25
+    c = addSquares(4,5); // retorna 41
 
 
 <h2>Arrow Function</h2>
 
+
+Uma Arrow Function, por definição, é uma função comum seguindo uma sintaxe encurtada com a restrição de tamanho de corpo. É lexicalmente vinculada ao valor <i>this</i>. Sendo sempre anônimas, ou seja, não possuiem um identificador, são bastante úteis quando desejamos retornar um valor apenas. As Arroy Functions seguem a sintaxe a seguir:
+
+
+    var hello = () => {
+      return "Hello World!";
+    }
+
+Que caso fosse declarado do modo convencional seria:
+
+    var hello = function() {
+      return "Hello World!";
+    }
 
 
 <h1>Vetores</h1>
