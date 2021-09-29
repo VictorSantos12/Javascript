@@ -576,9 +576,9 @@ Apesar do resultado, não é impossível editar o valor que uma const carrega, p
 
 
     if(true){
-        const user = {nome: 'Victor'};
-        user.nome = "João"
-        console.log(user)
+     const user = {nome: 'Victor'};
+     user.nome = "João"
+     console.log(user)
     }
  
     //OutPut:
@@ -683,6 +683,13 @@ Por exemplo, o código a seguir define uma função simples chamada square:
 
 
 A função <i>square</i> recebe por parâmetro um valor chamado de <i>numero</i>. Esse valor será tratado e retornado pela função, sendo multiplicado por ele mesmo neste caso. O bloco de execução de uma função, ou body, pode conter a chamada de outras funções, a declaração de variáveis, estruturas de controle de fluxo e mais.
+
+
+<h2>Funções Tipadas</h2>
+
+
+<h2>Arrow Function</h2>
+
 
 
 <h1>Vetores</h1>
