@@ -1,66 +1,96 @@
 
-function registerUser() {
+function getUsers() {
   return new Promise((resolve, reject) => {
 
     setTimeout(() => {
 
-      var error = true;
-      
-      if(!error) {
+      resolve(
+        [
+          {name: 'Victor'},
+          {name: 'Dinah'},
+          {name: 'André'},
+          {name: 'Maria'},
+          {name: 'Carlos'},
+        ]
+      );
 
-        resolve({
-          acction: 'Register user',
-          status: 'Success',
-          duration: 4
-        });
-
-      } else {
-
-        reject({
-          acction: 'Register user',
-          status: 'Failure',
-          duration: 4
-        });
-        
-      }
-
-    }, 4000);
+    }, 3000);
 
   });
+}
+
+
+async function main() {
+
+  var users = await getUsers();
+  console.log(users);
 
 }
 
-console.log('\n Processando...\n');
+main();
 
-registerUser().then((message) => {
+// function registerUser() {
+//   return new Promise((resolve, reject) => {
 
-  console.log(`
+//     setTimeout(() => {
 
-    Ação: ${message.acction}
-    _______________________________
+//       var error = true;
+      
+//       if(!error) {
 
-    Status: ${message.status}
-    _______________________________
+//         resolve({
+//           acction: 'Register user',
+//           status: 'Success',
+//           duration: 4
+//         });
 
-    Duração: ${message.duration}
+//       } else {
+
+//         reject({
+//           acction: 'Register user',
+//           status: 'Failure',
+//           duration: 4
+//         });
+        
+//       }
+
+//     }, 4000);
+
+//   });
+
+// }
+
+// console.log('\n Processando...\n');
+
+// registerUser().then((message) => {
+
+//   console.log(`
+
+//     Ação: ${message.acction}
+//     _______________________________
+
+//     Status: ${message.status}
+//     _______________________________
+
+//     Duração: ${message.duration}
   
-  `);
+//   `);
 
-}).catch((message) => {
+// }).catch((message) => {
 
-    console.log(`
+//     console.log(`
   
-    Ação: ${message.acction}
-    _______________________________
+//     Ação: ${message.acction}
+//     _______________________________
   
-    Status: ${message.status}
-    _______________________________
+//     Status: ${message.status}
+//     _______________________________
   
-    Duração: ${message.duration}
+//     Duração: ${message.duration}
   
-  `);
+//   `);
 
-});
+// });
 
 // function sendEmail(destinatario, corpo, callBack) {
 

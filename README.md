@@ -1752,7 +1752,7 @@ Caso o resultado for bem sucedido teremos o seguinte resultado:
     
     Processando...
 
-    
+
 
     Ação: Register user
     _______________________________
@@ -1780,6 +1780,69 @@ Caso ocorra uma falha na execução:
   
 
 <h2>Async/Await</h2>
+
+
+Async e Await são palavra-chaves que definem a execução de uma ação assíncrona, normalmente utilizadas quando a ação resulta na obtenção de dados da base de dados, por exemplo. Async e Await são respectivamente atribuidas a uma função que espera o resultado de uma promise e a uma primise. Observe:
+
+
+    function myPromise() {
+      return new Promise(...);
+    }
+
+    async function myAsyncFunction() {
+
+        await myPromise();
+
+    }
+
+
+Para melhor entender, imagine um cenário em que é preciso atribuir a uma variável uma lista de usuários que são obtidos a partir de uma promise, esta sendo responsável por faz um SELECT no banco de dados. Primeiro definiremos a promise:
+
+
+    function getUsers() {
+      return new Promise((resolve, reject) => {
+    
+        setTimeout(() => {
+    
+          resolve(
+            [
+              {name: 'Victor'},
+              {name: 'Dinah'},
+              {name: 'André'},
+              {name: 'Maria'},
+              {name: 'Carlos'},
+            ]
+          );
+    
+        }, 3000);
+    
+      });
+    }
+
+
+Uma lista com cinco usuários é definida como parâmetro da função resolve. Em seguida iremos criar a função assincrona que irá esperar o resultado da promise e em seguida irá atribuir o resultado a uma variável:
+
+
+    async function main() {
+    
+      var users = await getUsers();
+      console.log(users);
+    
+    }
+
+    main(); 
+
+
+Como resultado temos a lista de usuários sendo atribuída a variável users, e esta por sua vez sendo listada no console:
+
+
+    [
+      { name: 'Victor' },
+      { name: 'Dinah' },
+      { name: 'André' },
+      { name: 'Maria' },
+      { name: 'Carlos' }
+    ]
 
 
 Um detalhe importante para se deixar claro é que aplicar a programação assícrona nem sempre é necessário ou recomendado, já que certas execuções demandam uma ordem a ser seguida, especialmente se algum trecho depender da informação obtida em uma rotina ainda não executada.
