@@ -665,7 +665,7 @@ A declaração try...catch é composta por um bloco try, que contém uma ou mais
 <h1>Estruturas de Loop</h1>
 
 
-Uma estrutura de loop tem a função de executar determinado trecho de código uma quantidade de vezes determinada, comumente associado a interação de estruturas de armazenamento, como vetores, sobre os quais falaremos mais adiante. A seguir temos uma definição de uso das estruturas de loop:
+ Um loop é bastante usual quando é preciso definir o aparecimento de um bloco repetidas vezes e é comumente associado a interação de estruturas de armazenamento, como vetores, sobre os quais falaremos mais adiante. A seguir temos definições de uso das estruturas de loop:
 
 
 <h2>For</h2>
@@ -717,6 +717,52 @@ O loop While executa determinado bloco de código enquanto uma condição espec�
       text += "The number is " + i;
       i++;
     }
+
+
+<h2>Breack point</h2>
+
+
+O atributo break encerra o loop e retorna o array de acordo com o parâmetro definido. A seguir temos um exemplo de uso do break:
+
+
+    const users = [
+        user1 = {
+         name: "Victor",
+         age: 19,
+        },
+        user2 = {
+         name: "Milena",
+         age: 23,
+        },
+        user3 = {
+         name: "Matheus",
+         age: 30,
+        },
+        user4 = {
+         name: "João",
+         age: 22,
+        },
+        user5 = {
+         name: "Hugo",
+         age: 39
+     }
+    ];
+ 
+    for ( base of users ) {
+       console.log(base)
+       if(base.name === "João") {
+         break;
+      }
+    }
+
+<br>
+
+    //Console
+
+    { name: 'Victor', age: 19 }
+    { name: 'Milena', age: 23 }
+    { name: 'Matheus', age: 30 }
+    { name: 'João', age: 22 }
 
 
 <h1>Funções</h1>
@@ -1338,192 +1384,3 @@ Opcional. Valor a ser usado como o primeiro argumento da primeira chamada da fun
     }
 
 
-<!-- <div align="center">
-  <h1>Criando Loops</h1>
-</div>
-
-
-<h2>For</h2>
-
-
-O for é um mecanismo de looping do javascript. Adaptativo, é bastante usual quando é preciso definir o aparecimento de um bloco repetidas vezes. O mesmo funciona seguindo a sintaxe abaixo:
-
-    for ([inicialização]; [condição]; [expressão de mudança])
-    declaração
-
-<h5>Exemplo prático</h5>
-
-    for (var numb = 0; numb < 101 ; numb++ ) {
-        console.log(numb)
-     }
- 
-
-<h2>Inicialização (Valor inicial)</h2>
-
-
-É onde se define as expressões ou variáveis que serão utilizadas no loop
-
-    let numb = 0;
-
-
-<h2>Condição (Enquanto...)</h2>
-
-
-Expressão que é avaliada antes de qualquer processo de execução no loop. Possuindo um valor padrão true, executa o bloco enquanto esse valor permanecer verdadeiro, e o encerra quando for falso. A definição de uma condição não é obrigatória para executar o loop, masi é necessária para definir  que esse loop é finito
-
-    numb < 101
-
-
-<h2>Expressão de Mudança (faça...)</h2>
-
-
-<h5>Expressão que define uma alteração após cada ciclo de repetição do loop, normalmente definido alguma mudança, incrementando ou decremento</h5>
-
-    numb++
-
-
-<h2>Declaração (faça...)</h2>
-
-
-A declaração é semelhante a expressão final, sendo executada apenas se a condição se mantiver verdadeira, em casos podendo substituír a própria expressão final
-
-    for (let numb = 0; numb < 101 ;) {
-        numb++ 
-       console.log(numb)
-    }
-
-
-<h2>For(... in... )</h2>
-
-
-O laço for...in  interage sobre propriedades enumeradas de um objeto, na ordem original de inserção. O laço pode ser executado para cada propriedade distinta do objeto
-
-    var obj = {a:1, b:2, c:3};
-    
-    for (var prop in obj) {
-    
-      console.log("obj." + prop + " = " + obj[prop]);
-    }
-
-    //Console
-
-    obj.a = 1
-    obj.b = 2
-    obj.c = 3
-
-
-<h2>For(... of... )</h2>
-
-
-O loop for...of percorre objetos iterativos (incluindo Array, Map, Set, o objeto arguments e assim por diante), chamando uma função personalizada com instruções a serem executadas para o valor de cada objeto distinto
-
-    const users = [
-        user1 = {
-         name: "Victor",
-         age: 19,
-        },
-        user2 = {
-         name: "Milena",
-         age: 23,
-        },
-        user3 = {
-         name: "Matheus",
-         age: 30,
-        },
-        user4 = {
-         name: "João",
-         age: 22,
-        },
-        user5 = {
-         name: "Hugo",
-         age: 39
-     }
-    ];
- 
-    for ( base of users ) {
-        console.log(base)
-    }
-
-    //Console
-
-    { name: 'Victor', age: 19 }
-    { name: 'Milena', age: 23 }
-    { name: 'Matheus', age: 30 }
-    { name: 'João', age: 22 }
-    { name: 'Hugo', age: 39 }
-
-
-<h2>Breack point</h2>
-
-
-O atributo break encerra o loop e retorna o array de acordo com o parâmetro definido
-
-
-    const users = [
-        user1 = {
-         name: "Victor",
-         age: 19,
-        },
-        user2 = {
-         name: "Milena",
-         age: 23,
-        },
-        user3 = {
-         name: "Matheus",
-         age: 30,
-        },
-        user4 = {
-         name: "João",
-         age: 22,
-        },
-        user5 = {
-         name: "Hugo",
-         age: 39
-     }
-    ];
- 
-    for ( base of users ) {
-       console.log(base)
-       if(base.name === "João") {
-         break;
-      }
-    }
-
-    //Console
-
-    { name: 'Victor', age: 19 }
-    { name: 'Milena', age: 23 }
-    { name: 'Matheus', age: 30 }
-    { name: 'João', age: 22 }
-
-
-<h2>While</h2>
-
-
-O while executa uma rotina enquanto a condição que ele carrega for verdadeira. Sintaxe:
-
-    while (condição) {
-      rotina
-    }
-
-Exemplo:
-
-    let numb = 0;
-
-    while(numb < 5) {
-        numb++
-        console.log(numb)
-    };
-    
-    //Console
-    
-    1
-    2
-    3
-    4
-    5
-    
-    
-<h2>Switch</h2>
-
- -->
