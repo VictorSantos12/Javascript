@@ -1401,12 +1401,144 @@ Opcional. Valor a ser usado como o primeiro argumento da primeira chamada da fun
 <h1>Programação Assíncrona</h1>
 
 
-Antes de entendermos os conceitos da programação assíncrona, é importante ter ciência da razão pela qual ela passou a ser adotada. Em processos de execução mais antigos, onde o cenário do processamento de dados era síncrono apenas, o tratamento de threads era executado em cascata, onde o fim de uma operação resultava no início da próxima. A programção assíncrona define uma resposta para a limitação dos processos mais antigos, eleminando a necessita de esperar pelo fim de uma execução para que outra possa ocorrer. Este modelo dá um poder de processamento muito maior para qualquer aplicação que o adote, o tornando não bloqueante.
+Antes de entendermos os conceitos da programação assíncrona, é importante ter ciência da razão pela qual ela passou a ser adotada. Em processos de execução mais antigos, onde o cenário de processamento de dados era apenas síncrono, o tratamento de threads era executado em cascata, onde o fim de uma operação resultava no início da próxima. Tal método de processamento torna qualquer ação que demande mais tempo um bloqueio no sistema.
+
+A programção assíncrona define uma resposta para a limitação dos processos mais antigos, eleminando a necessita de esperar o fim de uma execução para que outra possa ocorrer. Este modelo dá um poder de processamento muito maior para qualquer aplicação que o adote, a tornando não bloqueante. Exemplo:
+
+Um algoritmo que executa algumas rotinas demanda um tempo variável para executar cada uma delas, o que em uma estrutura síncrona causaria um bloqueio. Para ilustrar o exemplo, crie um arquivo <i>async.js</i> e nela faça as seguintes inserções:
+
+
+    setTimeout(() => {
+      
+      console.log('\n 1º rotina executada...\n');
+      
+    }, 1000);
+    
+    setTimeout(() => {
+      
+      console.log(' 2º rotina executada...\n');
+      
+    }, 3000);
+    
+    setTimeout(() => {
+      
+      console.log(' 3º rotina executada...\n');
+      
+    }, 1000);
+    
+
+Cada função recebe um setTimeout method para simular o tempo de execução. Com o run do arquivo é possível perceber que todas têm seu proprio tempo de execução, mas não se bloqueiam. Isso se dá pois o Javascript segue o modelo de execução assíncrona não bloqueante. O output do exemplo seria:
+
+
+    1º rotina executada...
+   
+    3º rotina executada...
+   
+    2º rotina executada...
+
+
+Todas as rotinas são inicadas ao mesmo tempo independente da ordem de declaração, porém, a primeira e a terceira demandam menos tempo em relação a segunda, logo, suas finalizações são reportadas primeiro.
 
 A seguir definiremos as diferentes formas de aplicar a programação assíncrona no Javascript:
 
 
 <h2>CallBacks</h2>
+
+
+Uma CallBack function é uma função associada a execução de uma rotina assíncrona, sendo chamada após sua conclusão. Para entender na prática, trascreva o código abaixo no arquivo anteriomente criado:
+
+
+    function sendEmail(destinatario, corpo) {
+    
+      setTimeout(() => {
+    
+        console.log(`
+    
+          Para: ${destinatario}
+          ________________________________________
+    
+          ${corpo}
+          ________________________________________
+    
+          De: Victor
+    
+        `);
+    
+      }, 4000);
+    
+    }
+    
+    console.log('\n Enviando e-mail...')
+
+    sendEmail('Maria', 'Olá Maria...');
+
+    console.log(' E-mail enviado');
+
+
+Estamos simulando o envio um e-mail com uma mensagem de inicialização e uma de confirmação, com o seguinte output:
+
+
+      Enviando e-mail...
+      E-mail enviado
+
+
+      Para: Maria
+      ________________________________________
+
+      Olá Maria...
+      ________________________________________
+
+      De: Victor
+
+
+Porém, seria ideal ter a mensagem de confirmação exibida após o fim da execução. Para corrigir o problema podemos utilizar um CallBack function que apenas seja executada quando a rotina de envio for encerrada. Observe:
+
+                                               V
+    function sendEmail(destinatario, corpo, callBack) {
+    
+      setTimeout(() => {
+    
+        console.log(`
+    
+          Para: ${destinatario}
+          ________________________________________
+    
+          ${corpo}
+          ________________________________________
+    
+          De: Victor
+    
+        `);
+        callBack(); <<<
+      }, 4000);
+    
+    }
+    
+    console.log('\n Enviando e-mail...')
+    
+    sendEmail('Maria', 'Olá Maria...', () => {
+      
+      console.log('E-mail enviado');
+    
+    });
+
+
+Um novo atributo foi adicionado a função sendEmail(), este sendo chamado após o console.log que simula o envio do email. Quando a função é intanciada é possível declarar uma Arrow function que execute a mensagem de confirmação. Com isso temos o resultado desejado:
+
+
+    Enviando e-mail...
+   
+   
+         Para: Maria
+         ________________________________________
+   
+         Olá Maria...
+         ________________________________________
+   
+         De: Victor
+   
+       
+    E-mail enviado
 
 
 <h2>Promises</h2>
@@ -1415,7 +1547,7 @@ A seguir definiremos as diferentes formas de aplicar a programação assíncrona
 <h2>Async/Await</h2>
 
 
-Um detalhe importante para se deixar claro é que aplicar a programação assícrona nem sempre é necessário ou recomendado, já que certas execuções demandam uma ordem a ser seguida, especialmente se algum trecho depender da informação obtida em uma rotina ainda não foi executada.
+Um detalhe importante para se deixar claro é que aplicar a programação assícrona nem sempre é necessário ou recomendado, já que certas execuções demandam uma ordem a ser seguida, especialmente se algum trecho depender da informação obtida em uma rotina ainda não executada.
 
 
 <h1>Javascript Orientado a Objetos</h1>
