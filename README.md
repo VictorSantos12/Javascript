@@ -662,6 +662,79 @@ A declaração try...catch é composta por um bloco try, que contém uma ou mais
     }
 
 
+<h1>Funções</h1>
+
+
+Uma função é definida pela executação de uma rotina que envolva ou não o retorno de valores, estes podendo ser recebitos via parâmetro. Uma função Javascript se dá por:
+
+
+* Declaração da palavra-chave <i>function</i>
+* Nome da função
+* Definição de parâmetros opcionais declarados entre parênteses
+* Body da função declarado entre chaves <b>{ }</b>
+
+
+Por exemplo, o código a seguir define uma função simples chamada square:
+
+
+    function square(numero) {
+      return numero * numero;
+    }
+
+
+A função <i>square</i> recebe por parâmetro um valor chamado de <i>numero</i>. Esse valor será tratado e retornado pela função, sendo multiplicado por ele mesmo neste caso. O bloco de execução de uma função, ou body, pode conter a chamada de outras funções, a declaração de variáveis, estruturas de controle de fluxo e mais.
+
+
+<h2>Funções aninhadas e closures</h2>
+
+
+Aninhar uma função define declarar uma function dentro do escopo de outra, restringindo seu usa ao trecho de declaração. Uma função aninha, por padrão, herda os parâmetros passados na sua function parent. Isso determina que uma função aninhada também é uma closure. Em outras palavras, a função interior contém o escopo da função exterio. 
+
+Em resumo:
+
+- A função interna só pode ser acessada a partir de declarações em função externa.
+- A função interna forma uma closure: a função  interna pode usar os argumentos e variáveis da função externa, enquanto a função externa não pode usar os argumentos e variáveis da função interna.
+
+Exemplo:
+
+
+    function addSquares(a,b) {
+       function square(x) {
+          return x * x;
+       }
+       return square(a) + square(b);
+    }
+
+    a = addSquares(2,3); // retorna 13
+    b = addSquares(3,4); // retorna 25
+    c = addSquares(4,5); // retorna 41
+
+
+<h2>Arrow Function</h2>
+
+
+Uma Arrow Function, por definição, é uma função comum seguindo uma sintaxe encurtada, sendo lexicalmente vinculada ao valor <i>this</i>. Sendo sempre anônimas, ou seja, não possuiem um identificador, pode receber parâmetros extamente da mesma forma que uma função comum. As Arroy Functions seguem a sintaxe a seguir:
+
+
+    var hello = () => {
+      return "Hello World!";
+    }
+
+
+Caso essa function fosse declarado do modo convencional seria:
+
+
+    var hello = function() {
+      return "Hello World!";
+    }
+
+
+A clausula <i>return</i> também pode ser omitida em uma Arroy function, tendo a restrição de só permitir o retorno de um único valor:
+
+
+    var hello = () => "Hello World!";
+
+
 <h1>Estruturas de Loop</h1>
 
 
@@ -751,7 +824,7 @@ O atributo break encerra o loop e retorna o array de acordo com o parâmetro def
     ];
  
     for ( base of users ) {
-        
+
        console.log(base)
 
        if(base.name === "João") {
@@ -767,71 +840,6 @@ O atributo break encerra o loop e retorna o array de acordo com o parâmetro def
     { name: 'Milena', age: 23 }
     { name: 'Matheus', age: 30 }
     { name: 'João', age: 22 }
-
-
-<h1>Funções</h1>
-
-
-Uma função é definida pela executação de uma rotina que envolva ou não o retorno de valores, estes podendo ser recebitos via parãmetro. Uma função Javascript se dá por:
-
-
-* Declaração da palavra-chave <i>function</i>
-* Nome da função
-* Definição de parâmetros opcionais declarados entre parênteses
-* Body da função declarado entre chaves <b>{ }</b>
-
-
-Por exemplo, o código a seguir define uma função simples chamada square:
-
-
-    function square(numero) {
-      return numero * numero;
-    }
-
-
-A função <i>square</i> recebe por parâmetro um valor chamado de <i>numero</i>. Esse valor será tratado e retornado pela função, sendo multiplicado por ele mesmo neste caso. O bloco de execução de uma função, ou body, pode conter a chamada de outras funções, a declaração de variáveis, estruturas de controle de fluxo e mais.
-
-
-<h2>Funções aninhadas e closures</h2>
-
-
-Aninhar uma função define declarar uma function dentro do escopo de outra, restringindo seu usa ao trecho de declaração. Uma função aninha, por padrão, herda os parâmetros passados na sua function parent. Isso determina que uma função aninhada também é uma closure. Em outras palavras, a função interior contém o escopo da função exterio. 
-
-Em resumo:
-
-- A função interna só pode ser acessada a partir de declarações em função externa.
-- A função interna forma uma closure: a função  interna pode usar os argumentos e variáveis da função externa, enquanto a função externa não pode usar os argumentos e variáveis da função interna.
-
-Exemplo:
-
-
-    function addSquares(a,b) {
-       function square(x) {
-          return x * x;
-       }
-       return square(a) + square(b);
-    }
-
-    a = addSquares(2,3); // retorna 13
-    b = addSquares(3,4); // retorna 25
-    c = addSquares(4,5); // retorna 41
-
-
-<h2>Arrow Function</h2>
-
-
-Uma Arrow Function, por definição, é uma função comum seguindo uma sintaxe encurtada com a restrição de tamanho de corpo. É lexicalmente vinculada ao valor <i>this</i>. Sendo sempre anônimas, ou seja, não possuiem um identificador, são bastante úteis quando desejamos retornar um valor apenas. As Arroy Functions seguem a sintaxe a seguir:
-
-
-    var hello = () => {
-      return "Hello World!";
-    }
-
-Que caso fosse declarado do modo convencional seria:
-
-    var hello = function() {
-      return "Hello World!";
-    }
 
 
 <h1>Vetores</h1>
@@ -1372,6 +1380,8 @@ Opcional. Valor a ser usado como o primeiro argumento da primeira chamada da fun
     
     console.log( reduce.reduce((a, b) => ({...a, [b.sexo] : [...a[b.sexo] || [], b]}), {}) );
 
+<br>
+
     //Console
 
     {
@@ -1388,3 +1398,18 @@ Opcional. Valor a ser usado como o primeiro argumento da primeira chamada da fun
     }
 
 
+<h1>Programação Assíncrona</h1>
+
+
+Antes de entendermos os conceitos da programação assíncrona, é importante ter ciência da razão pela qual ela passou a ser adotada. Em processos de execução mais antigos, onde o cenário do processamento de dados era síncrono apenas, o tratamento de threads era executado em cascata, onde o fim de uma operação resultava no início da próxima. A programção assíncrona define uma resposta para a limitação dos processos mais antigos, eleminando a necessita de esperar pelo fim de uma execução para que outra possa ocorrer. Este modelo dá um poder de processamento muito maior para qualquer aplicação que o adote, o tornando não bloqueante.
+
+A seguir definiremos como a programação assíncrona é utilizada no Javascript:
+
+
+<h2>Promises</h2>
+
+
+<h2>Async/Await</h2>
+
+
+<h1>Javascript Orientado a Objetos</h1>
