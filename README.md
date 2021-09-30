@@ -726,30 +726,34 @@ O atributo break encerra o loop e retorna o array de acordo com o parâmetro def
 
 
     const users = [
-        user1 = {
-         name: "Victor",
-         age: 19,
-        },
-        user2 = {
-         name: "Milena",
-         age: 23,
-        },
-        user3 = {
-         name: "Matheus",
-         age: 30,
-        },
-        user4 = {
-         name: "João",
-         age: 22,
-        },
-        user5 = {
-         name: "Hugo",
-         age: 39
+
+      user1 = {
+       name: "Victor",
+       age: 19,
+      },
+      user2 = {
+       name: "Milena",
+       age: 23,
+      },
+      user3 = {
+       name: "Matheus",
+       age: 30,
+      },
+      user4 = {
+       name: "João",
+       age: 22,
+      },
+      user5 = {
+       name: "Hugo",
+       age: 39
+
      }
     ];
  
     for ( base of users ) {
+        
        console.log(base)
+
        if(base.name === "João") {
          break;
       }
