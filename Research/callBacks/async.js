@@ -1,31 +1,94 @@
 
-function sendEmail(destinatario, corpo, callBack) {
+function registerUser() {
+  return new Promise((resolve, reject) => {
 
-  setTimeout(() => {
+    setTimeout(() => {
 
-    console.log(`
+      var error = true;
+      
+      if(!error) {
 
-      Para: ${destinatario}
-      ________________________________________
+        resolve({
+          acction: 'Register user',
+          status: 'Success',
+          duration: 4
+        });
 
-      ${corpo}
-      ________________________________________
+      } else {
 
-      De: Victor
+        reject({
+          acction: 'Register user',
+          status: 'Failure',
+          duration: 4
+        });
+        
+      }
 
-    `);
-    callBack(destinatario);
-  }, 4000);
+    }, 4000);
+
+  });
 
 }
 
-console.log('\n Enviando e-mail...')
+console.log('\n Processando...\n');
 
-sendEmail('Maria', 'Olá Maria...', (destinatario) => {
+registerUser().then((message) => {
+
+  console.log(`
+
+    Ação: ${message.acction}
+    _______________________________
+
+    Status: ${message.status}
+    _______________________________
+
+    Duração: ${message.duration}
   
-  console.log(`E-mail enviado para ${destinatario}`);
+  `);
+
+}).catch((message) => {
+
+    console.log(`
+  
+    Ação: ${message.acction}
+    _______________________________
+  
+    Status: ${message.status}
+    _______________________________
+  
+    Duração: ${message.duration}
+  
+  `);
 
 });
+
+// function sendEmail(destinatario, corpo, callBack) {
+
+//   setTimeout(() => {
+
+//     console.log(`
+
+//       Para: ${destinatario}
+//       ________________________________________
+
+//       ${corpo}
+//       ________________________________________
+
+//       De: Victor
+
+//     `);
+//     callBack(destinatario);
+//   }, 4000);
+
+// }
+
+// console.log('\n Enviando e-mail...')
+
+// sendEmail('Maria', 'Olá Maria...', (destinatario) => {
+  
+//   console.log(`E-mail enviado para ${destinatario}`);
+
+// });
 
 // setTimeout(() => {
   

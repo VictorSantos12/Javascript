@@ -1541,7 +1541,7 @@ Um novo atributo foi adicionado a função sendEmail(), este sendo chamado após
     E-mail enviado
 
 
-<h3>Parâmetros em CallBacks</h3>
+<h2>Parâmetros em CallBacks</h2>
 
 
 Por ser uma função as CallBacks permitem que parâmetros sejam passados como argumentos no momento de declaração. Veja essa ideia aplicada ao exemplo anterior:
@@ -1596,6 +1596,188 @@ Com isso temos o seguinte output:
 
 <h2>Promises</h2>
 
+
+As promises(promessas) são um meio mais sofisticado de tratar execuções assíncronas, estas sendo lançadas ao iniciar uma rotina, determinando que sua execução irá acontecer em algum momento futuro. As promises também permitem tratar o resultado após serem finalizadas, seja a informação obtida ou um erro de operação. Uma promise segue a sintaxe abaixo: 
+
+
+    function identifier() {
+      return new Primise((resolve, reject) => {
+    
+      });
+    }
+
+
+Uma função assíncrona que espera uma promise retorna uma promise. E para tratar os possíveis resultados da rotina usa-se como pârametro as funções resolve(ação bem sucedida) e reject(falha na execução). As duas possíbilidades são tratadas de formas distintas ao instanciar a função assíncrona:
+
+
+    identifier(
+
+    ).then(
+     
+     // Ação bem sucedida
+
+    ).catch(
+
+     // Falha na execução
+
+    );
+
+
+Para melhor ilustrar, imagine uma rotina que registre um usuário no banco de dados. Para essa rotina é possível ter dois resultados plausíveis: sucesso e falha. Com isso, em uma pasta <i>promise.js</i>, transcreva as seguintes linhas de código:
+
+
+    function registerUser() {
+      return new Promise((resolve, reject) => {
+    
+        setTimeout(() => {
+    
+          var error = false;
+          
+          if(!error) {
+    
+            resolve(); // Ação bem sucedida
+    
+          } else {
+    
+            reject(); // Falha na execução
+    
+          }
+    
+        }, 4000);
+    
+      });
+    
+    }
+    
+    console.log('\n Processando...\n');
+    
+    registerUser().then(() => {
+      console.log(' Usuário registrado com sucesso!')
+    });
+
+
+Criamos uma promise que inclui um setTimeout para simular o tempo de execução e uma clausula if-else, que define o sucesso ou a falha da execução. A condição que determina a chamada da function resolve() é um boolean chamado de error, inicialmente declarado como false. Ao executar o arquivo temos o seguinte output:
+
+
+    Processando...
+   
+    Usuário registrado com sucesso!
+
+
+O resolve foi tratado e tivemos a resposta correspondente ao registro bem sucedido do usuário. Mas, se mudarmos a variável error para true, temos o seguinte problema:
+
+
+    (node:5540) UnhandledPromiseRejectionWarning: undefined
+
+
+A mensagem diz que uma promise foi lançada mas seu resultado não foi tratado. Isso ocorreu pois a falha na simulação, ou a reject function, não foi tratada. Para resolver o problema defina através da função catch como sua promise irá tratar o reject na ação:
+
+
+    registerUser().then(() => {
+
+       console.log(' Usuário registrado com sucesso!');
+
+    }).catch(() => {
+
+      console.log(' Não foi possível registrar o usuário!');
+
+    });
+
+
+Após tornar a rodar o arquivo, temos o seguinte resultado:
+
+
+    Processando...
+   
+    Não foi possível registrar o usuário!
+
+
+<h2>Parâmetros em Promises</h2>
+
+
+Da mesma forma que nas CallBack functions, uma promise também pode definir um parâmetro para cada uma das suas functions de resposta, sendo especificamente um parâmetro por function. Observe:
+
+    ...
+
+    resolve({
+      acction: 'Register user',
+      status: 'Success',
+      duration: 4
+    });
+
+    ...
+
+    reject({
+      acction: 'Register user',
+      status: 'Failure',
+      duration: 4
+    });
+
+
+Um objeto json é definido como parâmetro de cada function resultante, podendo ser utilizado da seguinte maneira:
+
+
+    registerUser().then((message) => {
+    
+      console.log(`
+    
+        Ação: ${message.acction}
+        _______________________________
+    
+        Status: ${message.status}
+        _______________________________
+    
+        Duração: ${message.duration}
+      
+      `);
+    
+    }).catch((message) => {
+    
+        console.log(`
+      
+        Ação: ${message.acction}
+        _______________________________
+      
+        Status: ${message.status}
+        _______________________________
+      
+        Duração: ${message.duration}
+      
+      `);
+    
+    });
+
+
+Caso o resultado for bem sucedido teremos o seguinte resultado:
+    
+    Processando...
+
+    
+
+    Ação: Register user
+    _______________________________
+
+    Status: Success
+    _______________________________
+
+    Duração: 4
+
+
+Caso ocorra uma falha na execução:
+
+
+    Processando...
+
+
+  
+    Ação: Register user
+    _______________________________
+  
+    Status: Failure
+    _______________________________
+  
+    Duração: 4
+  
 
 <h2>Async/Await</h2>
 
