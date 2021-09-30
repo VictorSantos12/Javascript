@@ -862,9 +862,9 @@ Um Array é declarado abrindo chaves([ ]), o que define que mais de um valor ser
 Um detalhe importante a se ater é que a contagem de posições, ou indexes, de um vetor sempre se inicia em 0.
    
     
-<div align="center">
-   <h1>Métodos e Atributos de Um Array</h1> 
-</div>
+
+<h1>Métodos e Atributos de Um Array</h1> 
+
 
 Estruturas de armazenamento compostas têm a função de agrupar informações que posteriormente devem poder ser acessadas, alteradas, excluidas e etc. Para tais funções o Javascript disponibiliza uma série de métodos com funcionalidades distintas e que atribuem muito mais funcionalidades a estrutura simples como um array muito mais:
 
@@ -1403,13 +1403,19 @@ Opcional. Valor a ser usado como o primeiro argumento da primeira chamada da fun
 
 Antes de entendermos os conceitos da programação assíncrona, é importante ter ciência da razão pela qual ela passou a ser adotada. Em processos de execução mais antigos, onde o cenário do processamento de dados era síncrono apenas, o tratamento de threads era executado em cascata, onde o fim de uma operação resultava no início da próxima. A programção assíncrona define uma resposta para a limitação dos processos mais antigos, eleminando a necessita de esperar pelo fim de uma execução para que outra possa ocorrer. Este modelo dá um poder de processamento muito maior para qualquer aplicação que o adote, o tornando não bloqueante.
 
-A seguir definiremos como a programação assíncrona é utilizada no Javascript:
+A seguir definiremos as diferentes formas de aplicar a programação assíncrona no Javascript:
+
+
+<h2>CallBacks</h2>
 
 
 <h2>Promises</h2>
 
 
 <h2>Async/Await</h2>
+
+
+Um detalhe importante para se deixar claro é que aplicar a programação assícrona nem sempre é necessário ou recomendado, já que certas execuções demandam uma ordem a ser seguida, especialmente se algum trecho depender da informação obtida em uma rotina ainda não foi executada.
 
 
 <h1>Javascript Orientado a Objetos</h1>
