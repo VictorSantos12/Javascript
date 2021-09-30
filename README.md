@@ -223,7 +223,7 @@ São mais recentes na linguagem que os anteriores. São utilizados como chaves d
 <h2>Object</h2>
 
 
-O JavaScript é uma linguagem projetada com base em paradigmas orientados a objetos. Um objeto é uma junção de propriedades, que são definidas pela associação entre um nome e um valor. Em JavaScript, um objeto possui as mesmas características de um objeto na nossa realidade. No JavaScript os objetos são caracterizados por suas propriedades e, portanto, possuem variações como objetos reais. Veremos mais sobre o Javascript orientado a objetos mais a frente.
+O JavaScript é uma linguagem projetada com base em paradigmas orientados a objetos. Um objeto é uma junção de propriedades, que são definidas pela associação entre um nome e um valor. Em JavaScript, um objeto possui as mesmas características de um objeto na nossa realidade. No JavaScript os objetos são caracterizados por suas propriedades e, portanto, possuem variações como objetos reais. Veremos mais sobre o Javascript orientado a objetos futuramente.
 
 
 
@@ -662,6 +662,63 @@ A declaração try...catch é composta por um bloco try, que contém uma ou mais
     }
 
 
+<h1>Estruturas de Loop</h1>
+
+
+Uma estrutura de loop tem a função de executar determinado trecho de código uma quantidade de vezes determinada, comumente associado a interação de estruturas de armazenamento, como vetores, sobre os quais falaremos mais adiante. A seguir temos uma definição de uso das estruturas de loop:
+
+
+<h2>For</h2>
+
+
+Segue uma sintaxe padrão que increnta o valor de uma variável através da comparação entre essa variável e a quantidade de vezes que a ação deve se repetir:
+
+
+    for (let i = 0; i < 5; i++) {
+      text += "The number is " + i + "<br>";
+    }
+
+
+<h2>For In</h2>
+
+
+O for in tem a mesma função do for loop, porém, o determinador da repetição é a propriedade de um objeto, seguindo a sintaxe abaixo:
+
+    const person = {fname:"John", lname:"Doe", age:25};
+    
+    let text = "";
+
+    for (let x in person) {
+      text += person[x];
+    }
+
+
+<h2>For Of</h2>
+
+
+O for of executa um loop diacirdo com a quantidade de valores presentes em um object interable, como um Array, String, NodeList e mais:
+
+
+    const cars = ["BMW", "Volvo", "Mini"];
+
+    let text = "";
+    for (let x of cars) {
+      text += x;
+    }
+
+
+<h2>While</h2>
+
+
+O loop While executa determinado bloco de código enquanto uma condição específica definida como uma expressão boleana for true ou false:
+
+
+    while (i < 10) {
+      text += "The number is " + i;
+      i++;
+    }
+
+
 <h1>Funções</h1>
 
 
@@ -730,13 +787,13 @@ Que caso fosse declarado do modo convencional seria:
 <h1>Vetores</h1>
 
 
-Um vetor, array ou mesmo variável compostas, difere de uma variável simples apenas pela capacidade de armazenar multiplos dados na sua estrutura
+Um vetor, array ou mesmo variável compostas, difere de uma variável simples apenas pela capacidade de armazenar multiplos dados em sua estrutura:
 
 
     var exemplo = [item1, item2, item3];
 
 
-Um Array é defindo dentro de uma variável comum que recebe [ ] definindo que mais de um valor será declarado. Os valores podem ser acessados por suas posições
+Um Array é declarado abrindo chaves([ ]), o que define que mais de um valor será declarado. Os valores em um Array são separados por vírgula e podem ser acessados por meio de seus indexes:
 
 
     var food = ["Pizza", "Bolo", "Macarrão"];
@@ -744,31 +801,20 @@ Um Array é defindo dentro de uma variável comum que recebe [ ] definindo que m
     console.log(food[0], food[1], food[2]);
 
 
-Um detalhe importante a se ater é que a contagem de posições, ou indices, de um vetor sempre se inicia em 0
-
-
-<h2>Inserindo Dados</h2>
-
-
-    var food = ["Pizza", "Bolo", "Macarrão"];
-    food[3] = "Sushi";
-
-    console.log(`${food[0]}, ${ food[1]}, ${food[2]}, ${food[3]}`);
-
-    Terminal 
-
-    Pizza, Bolo, Macarrão, Sushi
+Um detalhe importante a se ater é que a contagem de posições, ou indexes, de um vetor sempre se inicia em 0.
    
     
 <div align="center">
    <h1>Métodos e Atributos de Um Array</h1> 
 </div>
 
+Estruturas de armazenamento compostas têm a função de agrupar informações que posteriormente devem poder ser acessadas, alteradas, excluidas e etc. Para tais funções o Javascript disponibiliza uma série de métodos com funcionalidades distintas e que atribuem muito mais funcionalidades a estrutura simples como um array muito mais:
+
 
 <h2>Push( )</h2>
 
 
-O push é um método interno do javascript que insere valor a um array, de forma que esse oculpe o ultimo indice do vetor
+O push é um método interno do javascript que insere valor a um array, de forma que esse oculpe o ultimo indice do vetor:
 
     let books = ["Harry Potter", "O Hobbit", "Sapiens"];
 
@@ -790,7 +836,7 @@ O push é um método interno do javascript que insere valor a um array, de forma
 <h2>Unshift( )</h2>
 
 
-Tem a função inversa do método push( ), inserindo um elemento como primeiro indice do array
+Tem a função inversa do método push( ), inserindo um elemento como primeiro indice do array:
   
     let cidades = ["João Pessoa", "Natal", "Salvador"];
     cidades.unshift("Recife");
@@ -811,7 +857,7 @@ Tem a função inversa do método push( ), inserindo um elemento como primeiro i
 <h2>Sort( )</h2>
 
 
-O sort( ), que literalmente significa organizar, é um método javascript que distribui os valores de uma array de forma a torna-los numericamente ou alfabeticamente ordenados
+O sort( ), que literalmente significa organizar, é um método javascript que distribui os valores de uma array de forma a torna-los numericamente ou alfabeticamente ordenados:
 
      let numb = [1, 456, 30, 17, 0.5];
    
@@ -831,7 +877,7 @@ O sort( ), que literalmente significa organizar, é um método javascript que di
 <h2>Length</h2>
 
 
-O length é uma atributo que pode ser dado a um array, definindo a quantidade de indices que a mesma possui
+O length é uma atributo que pode ser dado a um array, definindo a quantidade de indices que a mesma possui:
 
     let things = ["Celular", "Mouse", "Ventilado"];
     console.log(things.length);
@@ -850,7 +896,7 @@ O length é uma atributo que pode ser dado a um array, definindo a quantidade de
 <h2>Slice( )</h2>
 
 
-O método slice define um novo array a partir de um outro
+O método slice cria um novo array a partir de um array existente, sendo possível definir quais indexes do antigo irão compor o novo:
 
     let array = ['Lord of the Rings', 'O Hobbit', '1255', 'Batata'];
     let novoArray = array.slice(1,3);
@@ -866,17 +912,11 @@ O método slice define um novo array a partir de um outro
 
     arr.slice([início[,fim]])
 
-<div align="center">
-  <h5>
-   A definição é feita a partir do identificador da array inicial, e a partir dos indices deste são definidos os valores do novo array(1,3)
-  </h5>
-</div>
-
 
 <h2>Split( )</h2>
 
 
-O método split gera um array a partir de um string, lembrando que um string nada mais é que um array com indices do tipo char, ou caractere
+O método split gera um array a partir de um string, sendo um string nada mais é que um array com indices do tipo char, ou caractere:
 
     //Gerar indices com base no espaçamento(" ")
    
@@ -889,9 +929,9 @@ O método split gera um array a partir de um string, lembrando que um string nad
     
     [ 'João', 'Victor', 'dos', 'Santos' ]
 
-<h5>
- O parâmetro de separação é definido no método split(' '), sendo este o espaço entre as substrings que formam a string atribuída a variável nome
-</h5>
+
+ O parâmetro de separação é definido no método split(' '), sendo este o espaço entre as substrings que formam a string atribuída a variável nome:
+
 
     //Defnindo um parâmetro de limite
     
@@ -904,15 +944,14 @@ O método split gera um array a partir de um string, lembrando que um string nad
     
     [ '28', 'de', 'Maio' ]
 
-<h5>
- Neste caso é definido um parâmetro de limite, atribuíndo a variável data apenas as três primeira substrings, sendo estas seus novosindices
-</h5>
+
+ Neste caso é definido um parâmetro de limite, atribuíndo a variável data apenas as três primeira substrings, sendo estas seus novosindices.
 
 
 <h2>Slice( ) + Split( )</h2>
 
 
-Ambos os métodos slice e split possuem a mesma função prática, portanto, é possível relacioná-los para obter um resultado ainda mais preciso
+Ambos os métodos slice e split possuem a mesma função prática, portanto, é possível relacioná-los para obter um resultado ainda mais preciso:
 
     let dataNascimento = "28 de Maio de 2001";
     let mes = dataNascimento.split(" ", 3)
@@ -924,17 +963,14 @@ Ambos os métodos slice e split possuem a mesma função prática, portanto, é 
     
     [ '28' ]
 
-<div align="center">
-  <h5>
-   A união desses métodos permite quebrar ainda mais uma informação, o que é bastante útil caso seja preciso ter apenas parte dela 
-  </h5>
-</div>
+
+A união desses métodos permite quebrar ainda mais uma informação, o que é bastante útil caso seja preciso ter apenas parte dela.
 
  
 <h2>Join( )</h2>
 
 
-O método join( ) tem a função oposta ao método split( ), gerando um string a partir de um array
+O método join( ) tem a função oposta ao método split( ), gerando um string a partir de um array:
 
     let array = ['João', 'Victor', 'dos', 'Santos'];
     let nome = array.join(' ');
@@ -951,17 +987,14 @@ O método join( ) tem a função oposta ao método split( ), gerando um string a
 
     arr.join([separador = ' '])
 
-<div align="center">
-  <h5>
-   Assim como o split( ), um parâmetro de definição do espaçamento é determinado no método 
-  </h5>
-</div>
 
+ Assim como o split( ), um parâmetro de definição do espaçamento é determinado no método.
 
 
 <h2>Concat( )</h2>
 
-O método concat( ) basicamente concatena dois arrays distintos
+
+O método concat( ) basicamente concatena dois arrays distintos criando um novo:
 
     let array1 = [ 0, 1, 2, 3, 4, 5 ];
     let array2 = [ 6, 7, 8, 9, 10 ];
@@ -979,18 +1012,14 @@ O método concat( ) basicamente concatena dois arrays distintos
 
     arr.concat(valor1, valor2, ..., valorN)
 
-<div align="center">
-  <h5>
-   O resultando é um array cujos indices são a soma dos indices dos arrays concatenados
-  </h5>
-</div>
 
+ O resultando é um array cujos indices são a soma dos indices dos arrays concatenados.
 
 
 <h2>Pop( )</h2>
 
 
-O método pop( ) remove o ultimo indice de um array
+O método pop( ) remove o ultimo indice de um array:
 
     let array1 = ['João', 'Victor', 'dos', 'Santos'];
     array1.pop();
@@ -1011,7 +1040,7 @@ O método pop( ) remove o ultimo indice de um array
 <h2>Shift( )</h2>
 
 
-Sendo o oposto do pop( ), o método shift( ) remove o primeiro indice do array
+Sendo o oposto do pop( ), o método shift( ) remove o primeiro indice do array:
   
     let array1 = ['João', 'Victor', 'dos', 'Santos'];
     array1.shift();
@@ -1032,7 +1061,7 @@ Sendo o oposto do pop( ), o método shift( ) remove o primeiro indice do array
 <h2>Splice( )</h2>
 
 
-Com o método splice é possível definir dois elementos e inserir um valor entre eles, substituíndo os que ocupavam esta(s) posições
+Com o método splice é possível definir dois elementos e inserir um valor entre eles, substituíndo os que ocupavam esta(s) posições:
 
     let cidades = [ 'Recife', 'João Pessoa', 'Natal', 'Salvador' ];
     cidades.splice(1,2, 'Fortaleza');
@@ -1054,7 +1083,7 @@ Com o método splice é possível definir dois elementos e inserir um valor entr
 <h2>Reverse( )</h2>
 
 
-O método reverve( ) inverte a ordem dos elementos de um array
+O método reverse( ) inverte a ordem dos elementos de um array:
 
     let cidades = [ 'Recife', 'João Pessoa', 'Natal', 'Salvador' ];
     cidades.reverse();
@@ -1075,7 +1104,7 @@ O método reverve( ) inverte a ordem dos elementos de um array
 <h2>Entries( )</h2>    
 
 
-O método entries( ) retorna um novo objeto Array Iterator que contém os pares chave/valor para cada índice no array, definindo um valor de posição para cada 
+O método entries( ) retorna um novo objeto Array Iterator que contém os pares chave/valor para cada índice no array, definindo um valor de posição para cada:
 
     let array = ['Variáveis', 'Vetores', 'Loops', 'Objetos'];
     let result = array.entries();
@@ -1102,7 +1131,7 @@ O método entries( ) retorna um novo objeto Array Iterator que contém os pares 
 <h2>Entries() + Loop</h2>  
 
 
-Uma outra forma de uso do entries() é em conjunto com um loop de execução. Para cada indice é definida uma posição dentro do novo objeto gerado
+Uma outra forma de uso do entries() é em conjunto com um loop de execução. Para cada indice é definida uma posição dentro do novo objeto gerado:
 
     let array = ['Vetores', 'Loops', 'Variáveis', 'Objetos'];
     let result = array.entries();
@@ -1118,17 +1147,11 @@ Uma outra forma de uso do entries() é em conjunto com um loop de execução. Pa
     [ 2, 'Variáveis' ]
     [ 3, 'Objetos' ]
 
-<div align="center">
-  <h5>
-   Os loops serão mais bem abordados a frente
-  </h5>
-</div>
-
-
 
 <h2>Every()</h2>  
+
     
-O método every( ) age como uma forma de validação lógica. Ele é submetido a um array para definir se cada indice do mesmo corresponde a determinado padrão pré definido
+O método every( ) age como uma forma de validação lógica. Um Array é submetido a ele para definir se cada indice do mesmo corresponde a determinado padrão pré definido:
 
     function isBigEnough(element, index, array) {
         return element >= 10;
@@ -1155,14 +1178,9 @@ O método every( ) age como uma forma de validação lógica. Ele é submetido a
     arr.every(callback[, thisArg])
 
 
-<h5>
- A função isBigEnough(função de callback) define um valor padrão como return, quando submetemos as variáveis que guardam os array essevalor padrão é comparato com os valores contidos nas mesmas. Caso os valores não correspondam ao padrão, o método every() retorna umboolean to tipo false, caso correspondam, retorna true.
-</h5>
+ A função isBigEnough(função de callback) define um valor padrão como return, quando submetemos as variáveis que guardam o array, esse valor padrão é comparato com os valores contidos nas mesmas. Caso os valores não correspondam ao padrão, o método every() retorna false, caso correspondam, retorna true.
 
-<h5>
  Obs.: Os parâmetros element, index e array são parâmetros padrão de uso em uma função de callback, eles definem respectivamente: 
-</h5>
-
 
 - O elemento atual sendo processado no array(Obrigatório);
 - O índice do elemento atual sendo processado no array(Opcional);
@@ -1172,7 +1190,7 @@ O método every( ) age como uma forma de validação lógica. Ele é submetido a
 <h2>Filter()</h2>
 
 
-O método filter é semelhante ao every(), porém, ele define como resultado todos os valores que corresponderem ao valor padrão pré definido
+O método filter é semelhante ao every(), porém, ele define como resultado todos os valores que corresponderem ao valor padrão pré definido:
 
      function isBigEnough(element, index, array) {
          return element >= 10;
@@ -1193,17 +1211,13 @@ O método filter é semelhante ao every(), porém, ele define como resultado tod
 
     var newArray = arr.filter(callback[, thisArg])
 
-<div align="center">
-  <h5>
-   Nesse caso, cada valor foi submetido ao valor padão pré definido, e os que corresponderam a ele foram filtrados
-  </h5>
-</div>
+Nesse caso, cada valor foi submetido ao valor padão pré definido, e os que corresponderam a ele foram filtrados
 
 
 <h2>Find()</h2>
 
   
-Como nome sugere, é utilizado para encontrar determinada informação, esta sendo pré definida. Caso um valor dentro da array corresponda ao valor pré definido, o método find() toma esse valor como resultado
+Como o nome sugere, é utilizado para encontrar determinada informação, esta sendo pré definida. Caso um valor dentro doS array corresponda ao valor pré definido, o método find() toma esse valor como resultado:
 
     let data = [18, 100, 0.05]
 
@@ -1225,7 +1239,7 @@ Como nome sugere, é utilizado para encontrar determinada informação, esta sen
 <h2>ForEach()</h2>
 
 
-O método forEach() executa determinada ação em cada elemento de um array
+O método forEach() executa determinada ação em cada elemento de um array:
 
     function definePosition(element, index, array) {
         console.log(`[${index}] = ${element}`);
@@ -1245,18 +1259,13 @@ O método forEach() executa determinada ação em cada elemento de um array
 
     arr.forEach(callback(currentValue [, index [, array]])[, thisArg]);
 
-
-<div align="center">
-  <h5>
-   Uma função determina uma ação, quando esta é aplicada ao array cada elemento do array sofre a ação, neste caso sendo atribuido um valor correpondente a posição e mostrado no console
-  </h5>
-</div>
+Uma função determina uma ação, quando esta é aplicada ao array cada elemento do array sofre a ação, neste caso sendo atribuido um valor correpondente a posição e mostrado no console.
 
 
 <h2>Map()</h2>
 
 
-O método map() invoca a função de callback passada por parâmetro para cada elemento do Array e devolve um novo Array como resultado
+O método map() invoca a função de callback passada por parâmetro para cada elemento do Array e devolve um novo Array como resultado:
 
     let numbers = [1, 2, 3, 4, 5];
     let doubles = numbers.map(function(number) {
@@ -1279,7 +1288,7 @@ O método map() invoca a função de callback passada por parâmetro para cada e
 <h2>Reduce()</h2>
 
 
-O método reduce() executa uma função reducer (fornecida por você) para cada elemento do array, resultando num único valor de retorno.
+O método reduce() executa uma função reducer (fornecida) para cada elemento do array, resultando num único valor de retorno:
 
     //Sintaxe
     
