@@ -1491,7 +1491,7 @@ Estamos simulando o envio um e-mail com uma mensagem de inicialização e uma de
       De: Victor
 
 
-Porém, seria ideal ter a mensagem de confirmação exibida após o fim da execução. Para corrigir o problema podemos utilizar um CallBack function que apenas seja executada quando a rotina de envio for encerrada. Observe:
+Porém, seria ideal ter a mensagem de confirmação exibida após o fim da execução. Para corrigir o problema podemos utilizar uma CallBack function que só seja executada quando a rotina de envio for encerrada. Observe:
 
                                                V
     function sendEmail(destinatario, corpo, callBack) {
@@ -1529,16 +1529,69 @@ Um novo atributo foi adicionado a função sendEmail(), este sendo chamado após
     Enviando e-mail...
    
    
-         Para: Maria
-         ________________________________________
-   
-         Olá Maria...
-         ________________________________________
-   
-         De: Victor
+    Para: Maria
+    ________________________________________
+
+    Olá Maria...
+    ________________________________________
+    
+    De: Victor
    
        
     E-mail enviado
+
+
+<h3>Parâmetros em CallBacks</h3>
+
+
+Por ser uma função as CallBacks permitem que parâmetros sejam passados como argumentos no momento de declaração. Veja essa ideia aplicada ao exemplo anterior:
+
+
+    function sendEmail(destinatario, corpo, callBack) {
+    
+      setTimeout(() => {
+    
+        console.log(`
+    
+          Para: ${destinatario}
+          ________________________________________
+    
+          ${corpo}
+          ________________________________________
+    
+          De: Victor
+    
+        `);
+        callBack(destinatario);
+      }, 4000);
+    
+    }
+    
+    console.log('\n Enviando e-mail...')
+    
+    sendEmail('Maria', 'Olá Maria...', (destinatario) => {
+      
+      console.log(`E-mail enviado para ${destinatario}`);
+    
+    });
+
+
+Com isso temos o seguinte output:
+
+
+    Enviando e-mail...
+   
+   
+    Para: Maria
+    ________________________________________
+   
+    Olá Maria...
+    ________________________________________
+   
+    De: Victor
+   
+       
+    E-mail enviado para Maria
 
 
 <h2>Promises</h2>

@@ -14,16 +14,16 @@ function sendEmail(destinatario, corpo, callBack) {
       De: Victor
 
     `);
-    callBack();
+    callBack(destinatario);
   }, 4000);
 
 }
 
 console.log('\n Enviando e-mail...')
 
-sendEmail('Maria', 'Olá Maria...', () => {
+sendEmail('Maria', 'Olá Maria...', (destinatario) => {
   
-  console.log(' E-mail enviado');
+  console.log(`E-mail enviado para ${destinatario}`);
 
 });
 
