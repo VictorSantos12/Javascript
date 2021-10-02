@@ -1405,7 +1405,7 @@ Antes de entendermos os conceitos da programação assíncrona, é importante te
 
 A programção assíncrona define uma resposta para a limitação dos processos mais antigos, eleminando a necessita de esperar o fim de uma execução para que outra possa ocorrer. Este modelo dá um poder de processamento muito maior para qualquer aplicação que o adote, a tornando não bloqueante. Exemplo:
 
-Um algoritmo que executa algumas rotinas demanda um tempo variável para executar cada uma delas, o que em uma estrutura síncrona causaria um bloqueio. Para ilustrar o exemplo, crie um arquivo <i>async.js</i> e nela faça as seguintes inserções:
+Um algoritmo que executa algumas rotinas demanda certo tempo para executar cada uma delas, o que em uma estrutura síncrona causaria um bloqueio. Para ilustrar o exemplo, crie um arquivo <i>async.js</i> e nela faça as seguintes inserções:
 
 
     setTimeout(() => {
@@ -1427,7 +1427,7 @@ Um algoritmo que executa algumas rotinas demanda um tempo variável para executa
     }, 1000);
     
 
-Cada função recebe um setTimeout method para simular o tempo de execução. Com o run do arquivo é possível perceber que todas têm seu proprio tempo de execução, mas não se bloqueiam. Isso se dá pois o Javascript segue o modelo de execução assíncrona não bloqueante. O output do exemplo seria:
+Cada função recebe um setTimeout method para simular o tempo de execução. Com o run do arquivo é possível perceber que cada uma tem seu proprio tempo de execução, mas não se bloqueiam. Isso se dá pois o Javascript segue o modelo de execução assíncrona não bloqueante. O output do exemplo seria:
 
 
     1º rotina executada...
@@ -1782,7 +1782,7 @@ Caso ocorra uma falha na execução:
 <h2>Async/Await</h2>
 
 
-Async e Await são palavra-chaves que definem a execução de uma ação assíncrona, normalmente utilizadas quando a ação resulta na obtenção de dados da base de dados, por exemplo. Async e Await são respectivamente atribuidas a uma função que espera o resultado de uma promise e a uma primise. Observe:
+Async e Await são palavras-chave que definem a execução de uma ação assíncrona de forma síncrona, normalmente utilizadas quando a ação resulta na obtenção de informações a partir de uma promise. Async e Await são respectivamente atribuidas a uma função que espera o resultado de uma promise e a uma promise, e um await só pode ser utilizado em uma função do tipo async. Observe:
 
 
     function myPromise() {
@@ -1796,7 +1796,7 @@ Async e Await são palavra-chaves que definem a execução de uma ação assínc
     }
 
 
-Para melhor entender, imagine um cenário em que é preciso atribuir a uma variável uma lista de usuários que são obtidos a partir de uma promise, esta sendo responsável por faz um SELECT no banco de dados. Primeiro definiremos a promise:
+Para melhor entender, imagine um cenário em que é preciso atribuir a uma variável uma lista de usuários que são obtidos a partir de uma promise, esta sendo responsável por fazer um SELECT no banco de dados. Primeiro definiremos a promise:
 
 
     function getUsers() {
@@ -1843,6 +1843,82 @@ Como resultado temos a lista de usuários sendo atribuída a variável users, e 
       { name: 'Maria' },
       { name: 'Carlos' }
     ]
+
+
+<h2>Tratando Erros com o Async/Await</h2>
+
+
+Diferente do uso das promises, que contam com uma estrutura própria de tratamento de erros, o async/await demanda o uso de outra estrutura caso ocorra alguma problema na execução da ação definida como await, essa estrutura é:
+
+
+     try {
+
+     } catch () {
+
+     }
+
+
+O try-catch trata resultados em qualquer promise declarada dentro do escopo do try, sendo preciso definir a mensagem de erro na clausula catch. Para aplicar o try-catch e para vê-lo em execução, faça as seguintes modificações no exemplo anterior:
+
+Defina uma validação que irá determinar o resultado da promise, declarada como true, e uma mensagem como parâmetro para a function reject():
+
+
+    function getUsers() {
+      return new Promise((resolve, reject) => {    
+
+        setTimeout(() => {    
+
+          var error = true;    
+
+          if(!error) {    
+
+            resolve(
+              [
+                {name: 'Victor'},
+                {name: 'Dinah'},
+                {name: 'André'},
+                {name: 'Maria'},
+                {name: 'Carlos'},
+              ]
+            );      
+
+          } else {    
+
+            reject('501');    
+
+          }    
+
+        }, 3000);    
+
+      });
+    }
+
+  
+Em seguida defina o try-catch para tratar o error resultante:
+
+
+    async function main() {
+    
+      try{
+    
+        var users = await getUsers();
+        console.log(users);
+    
+      } catch (error) {
+    
+         console.log(error);
+    
+      };
+    
+    }
+    
+    main();
+
+
+Com isso, temos a mensagem de erro como output:
+
+    
+    501
 
 
 Um detalhe importante para se deixar claro é que aplicar a programação assícrona nem sempre é necessário ou recomendado, já que certas execuções demandam uma ordem a ser seguida, especialmente se algum trecho depender da informação obtida em uma rotina ainda não executada.

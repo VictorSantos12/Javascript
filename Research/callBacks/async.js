@@ -4,15 +4,25 @@ function getUsers() {
 
     setTimeout(() => {
 
-      resolve(
-        [
-          {name: 'Victor'},
-          {name: 'Dinah'},
-          {name: 'André'},
-          {name: 'Maria'},
-          {name: 'Carlos'},
-        ]
-      );
+      var error = true;
+
+      if(!error) {
+
+        resolve(
+          [
+            {name: 'Victor'},
+            {name: 'Dinah'},
+            {name: 'André'},
+            {name: 'Maria'},
+            {name: 'Carlos'},
+          ]
+        );  
+
+      } else {
+
+        reject('501');
+
+      }
 
     }, 3000);
 
@@ -22,8 +32,16 @@ function getUsers() {
 
 async function main() {
 
-  var users = await getUsers();
-  console.log(users);
+  try{
+
+    var users = await getUsers();
+    console.log(users);
+
+  } catch (error) {
+
+     console.log(error);
+
+  };
 
 }
 
