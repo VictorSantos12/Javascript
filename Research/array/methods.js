@@ -1,5 +1,5 @@
 
-// Concat( )
+// * Concat( )
 
 // O método concat() retorna um novo array contendo todos os arrays ou valores passados como parâmetro
 
@@ -18,7 +18,7 @@ console.log(array3);
 
 
 
-// Entries( )
+// * Entries( )
 
 // O método entries( ) retorna um novo objeto Array Iterator que contém os pares chave/valor para cada
 // índice no array, definindo um valor de posição para cada 
@@ -36,7 +36,9 @@ console.log(result.next().value);
 console.log(result.next().value);
 console.log(result.next().value); 
 
-// Entries() + Loop
+
+
+// * Entries() + Loop
 
 let topcs = ['Variáveis', 'Vetores', 'Loops', 'Objetos'];
 let topcsResult = topcs.entries();
@@ -49,7 +51,7 @@ for ( item of topcsResult ) {
 
 
 
-// Every()
+// * Every()
 
 // O método every( ) age como uma forma de validação lógica. Ele é submetido a um array para definir se cada
 // indice do mesmo corresponde a determinado padrão pré definido
@@ -75,7 +77,7 @@ console.log(`sequence two is big enough ? ${resultTwo}`);
 
 
 
-// fill()
+// * fill()
 
 // O método fill() preenche todos os valores do array a partir do índice inicial a um índice final com
 // um valor estático.
@@ -91,7 +93,7 @@ console.log(fill.fill(4));
 
 
 
-// filter()
+// * filter()
 
 // O método filter() cria um novo array com todos os elementos que passaram no teste
 // implementado pela função fornecida
@@ -112,7 +114,7 @@ console.log(valuesResult);
 
 
 
-// find()
+// * find()
 
 // O método find() retorna o valor do primeiro elemento do array que satisfizer a função de
 // teste provida. Caso contrario, undefined é retornado.
@@ -130,7 +132,7 @@ console.log(dataResult);
 
 
 
-// flat()
+// * flat()
 
 // O método flat() cria um novo array com todos elementos sub-arrays concatenados nele de forma recursiva até
 // a profundidade especificada.
@@ -157,7 +159,7 @@ console.log(flatDepth.flat(2));
 
 
 
-// forEach()
+// * forEach()
 
 // O método forEach() executa uma dada função em cada elemento de um arra
 
@@ -175,7 +177,7 @@ function definePosition(element, index, array) {
 
 
 
-// includes()
+// * includes()
 
 // O método includes() determina se um array contém um determinado elemento, retornando true ou false
 // apropriadamente.
@@ -194,7 +196,7 @@ console.log([1, 2, NaN].includes(NaN));
 
 
 
-// indexOf() 
+// * indexOf() 
 
 // O método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array, retorna -1
 // caso o mesmo não esteja presente.
@@ -214,7 +216,7 @@ console.log(indexOf.indexOf(2, -3));
 
 
 
-// isArray()
+// * isArray()
 
 //O método Array.isArray() retorna true se um objeto é uma array, e false se não é.
 
@@ -231,7 +233,7 @@ console.log(Array.isArray(true));
 
 
 
-// join()
+// * join()
 
 //O método join() junta todos os elementos de um array (ou um array-like object) em uma string e
 // retorna esta string.
@@ -250,7 +252,7 @@ console.log(join.join('-'));
 
 
 
-// keys()
+// * keys()
 
 // O método keys() retorna um novo Array Iterator que contém as chaves para cada index do array.
 
@@ -269,7 +271,7 @@ for (item of keysResult) {
 
 
 
-// map()
+// * map()
 
 //O método map() invoca a função callback passada por argumento para cada elemento do
 // Array e devolve um novo Array como resultado.
@@ -289,7 +291,7 @@ console.log(doublesmap)
 
 
 
-// pop()
+// * pop()
 
 // O método pop() remove o último elemento de um array e retorna aquele elemento.
 
@@ -306,7 +308,7 @@ console.log(pop);
 
 
 
-// Push( )
+// * Push( )
 
 //O método push() adiciona um ou mais elementos ao final de um array e retorna o novo
 //comprimento desse array.
@@ -325,7 +327,7 @@ console.log(push);
 
 
 
-// reduce()
+// * reduce()
 
 //O método reduce() executa uma função reducer (fornecida por você) para cada
 //elemento do array, resultando num único valor de retorno.
@@ -365,7 +367,7 @@ console.log( reduce.reduce((a, b) => ({...a, [b.sexo] : [...a[b.sexo] || [], b]}
 
 
 
-// reverse()
+// * reverse()
 
 //O método reverse() inverte os itens de um array. O primeiro elemento do array se torna o último e
 //o último torna-se o primeiro.
@@ -383,7 +385,7 @@ console.log(cidades);
 
 
 
-// shift()
+// * shift()
 
 //O método shift()remove o primeiro elemento de um array e retorna esse elemento. Este método muda o
 //tamanho do array. 
@@ -404,7 +406,7 @@ console.log(firstElement);
 
 
 
-// slice()
+// * slice()
 
 // O método slice define um novo array a partir de um outro
 
@@ -421,7 +423,7 @@ console.log(novoslice);
     
 
 
-// some()
+// * some()
 
 // O método some() testa se ao menos um dos elementos no array passa no teste implementado
 // pela função atribuída e retorna um valor true ou false.
@@ -448,7 +450,7 @@ console.log([12, 5, 8, 1, 4].some(elem => elem > 10));
 
 
 
-// sort()
+// * sort()
 
 // O sort( ), que literalmente significa organizar, é um método javascript
 // que distribui os valores de uma array de forma a torna-los numericamente
@@ -466,7 +468,7 @@ console.log(sort.sort());
 
 
 
-// splice()
+// * splice()
 
 //Com o método splice é possível definir dois elementos e inserir um valor entre eles,
 // substituíndo os que ocupavam esta(s) posições
@@ -485,7 +487,7 @@ console.log(splice);
 
 
 
-// unshift()
+// * unshift()
 
 // O método unshift() adiciona um ou mais elementos no início de um array e retorna o número de
 // elementos (propriedade length) atualizado.
@@ -503,7 +505,7 @@ console.log(unshift);
 
 
 
-// values()
+// * values()
 
 // O método values() retorna um novo objeto de  Array Iterator que contém os valores para cada
 // índice no array.
