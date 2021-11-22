@@ -1,10 +1,12 @@
 
+// * CLASSES
 
-// Para declarar uma classe, usa-se a palavra chave class + um identificador
+// Uma classe define um modelo no qual se pode criar objetos. Para declarar uma 
+// classe, usa-se a palavra chave class + um identificador
 
 class Person {
 
-  // Método que inicia a classe e define seus atributos. 
+  // Um constructor é um Método que inicia a classe e define seus atributos. 
 
   constructor() {    
   
@@ -14,24 +16,24 @@ class Person {
     this.name;  
     this.age;
     this.profession = 'Programmer';
-    this.skills;
+    this.skills = [];
 
   }  
 
   // Um contructor ainda pode receber, via parâmetro, os valores atribuídos ao
   // novo objeto criado:
 
-//   constructor(name, age, profession) {
+//   constructor(name, age, profession, skills) {
 
 //     this.name = name;  
 //     this.age = age;
 //     this.profession = profession;
-
+//     this.skills = skills;
 //   }
 
   // Obs: Um constructor só pode ser declarado uma vez.
   
-  // Outros métodos além do constructor podem ser membros de uma classe:
+  // Outros métodos, além do constructor, podem ser membros de uma classe:
 
   someMethod() {
 
